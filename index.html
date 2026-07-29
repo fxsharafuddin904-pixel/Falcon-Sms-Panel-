@@ -10,115 +10,82 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-<div class="bg-glow glow-one"></div>
-<div class="bg-glow glow-two"></div>
-<div class="bg-glow glow-three"></div>
+<audio id="bgMusic" loop>
+    <source src="music/sad.mp3" type="audio/mpeg">
+</audio>
 
-<!-- =========================
-WELCOME PAGE
-========================= -->
+<div class="app">
+
+<!-- ================= WELCOME PAGE ================= -->
 
 <section id="welcomePage" class="page active">
 
 <div class="welcome-card">
 
-<div class="top-brand">
+<!-- Music Button -->
+<div class="music-box">
 
-<div class="brand-icon">
-🌍
-</div>
-
-<div class="brand-info">
-
-<h2>FalconPanel</h2>
-
-<p>Premium Virtual Number Service</p>
-
-</div>
+<button id="musicBtn" onclick="toggleMusic()">
+🔇 Music OFF
+</button>
 
 </div>
 
 <div class="welcome-content">
 
-<span class="welcome-badge">
+<div class="brand-icon">
+🌍
+</div>
 
-WELCOME
-
-</span>
+<h4>WELCOME</h4>
 
 <h1>
-
-Welcome to <span>FalconPanel</span>
-
+Welcome to<br>
+<span class="gradient">FalconPanel</span>
 </h1>
 
-<p>
-
+<p class="subtitle">
 From here you can get virtual numbers from all countries.
+</p>
 
-<br><br>
-
+<p class="price">
 SMS Cost:
 <strong>$0.013 / SMS</strong>
-
 </p>
 
 <div class="feature-row">
 
 <div class="feature">
-
 <span>🌍</span>
-
 <h3>190+</h3>
-
 <small>Countries</small>
-
 </div>
 
 <div class="feature">
-
 <span>⚡</span>
-
 <h3>Fast</h3>
-
 <small>Delivery</small>
-
 </div>
 
 <div class="feature">
-
 <span>🔒</span>
-
 <h3>Secure</h3>
-
 <small>Access</small>
-
 </div>
 
 </div>
 
-<button
-id="getStarted"
-class="primary-btn">
-
+<button class="primary-btn" onclick="showLogin()">
 Get Started →
-
 </button>
 
-<div class="bottom-note">
-
+<p class="footer-text">
 Trusted Worldwide Virtual Number Provider
-
-</div>
+</p>
 
 </div>
 
@@ -126,36 +93,26 @@ Trusted Worldwide Virtual Number Provider
 
 </section>
 
-<!-- =========================
-LOGIN PAGE START
-========================= -->
-  <!-- =========================
-LOGIN PAGE
-========================= -->
+<!-- ================= LOGIN PAGE ================= -->
 
 <section id="loginPage" class="page">
 
 <div class="app-card">
 
-<div class="top-brand">
+<div class="logo-box">
 
 <div class="brand-icon">
 🌍
 </div>
 
-<div class="brand-info">
-
 <h2>FalconPanel</h2>
 
 <p>Premium Virtual Number Service</p>
-
-</div>
-
-</div>
-
 <div class="section-heading">
 
-<h2>Test Account</h2>
+<p>TEST ACCOUNT</p>
+
+<h2>Login</h2>
 
 <p>
 Please log in first to access our virtual number service.
@@ -189,16 +146,16 @@ readonly>
 <p id="loginError" class="error-text"></p>
 
 <button
-id="loginBtn"
-class="primary-btn">
+class="primary-btn"
+onclick="loginUser()">
 
 Login →
 
 </button>
 
 <button
-id="backWelcome"
-class="secondary-btn">
+class="secondary-btn"
+onclick="showWelcome()">
 
 ← Back
 
@@ -208,24 +165,17 @@ class="secondary-btn">
 
 </section>
 
-<!-- =========================
-PLATFORM PAGE START
-========================= -->
-  <!-- =========================
-PLATFORM PAGE
-========================= -->
+<!-- ================= SELECT PAGE ================= -->
 
-<section id="platformPage" class="page">
+<section id="selectPage" class="page">
 
 <div class="app-card">
 
-<div class="top-brand">
+<div class="logo-box">
 
 <div class="brand-icon">
 🌍
 </div>
-
-<div class="brand-info">
 
 <h2>FalconPanel</h2>
 
@@ -233,30 +183,17 @@ PLATFORM PAGE
 
 </div>
 
-</div>
-
 <div class="section-heading">
 
-<span class="welcome-badge">
+<p>SELECT SERVICE</p>
 
-SELECT SERVICE
-
-</span>
-
-<h2>
-
-Choose Platform & Country
-
-</h2>
+<h2>Choose Platform & Country</h2>
 
 <p>
-
 Select your platform and country below.
-
 </p>
 
 </div>
-
 <div class="form-group">
 
 <label>Platform</label>
@@ -266,20 +203,11 @@ Select your platform and country below.
 <option value="">Select Platform</option>
 
 <option>WhatsApp</option>
-
 <option>Telegram</option>
-
 <option>Facebook</option>
-
 <option>Instagram</option>
-
 <option>Google</option>
-
 <option>TikTok</option>
-
-<option>Discord</option>
-
-<option>X (Twitter)</option>
 
 </select>
 
@@ -293,43 +221,31 @@ Select your platform and country below.
 
 <option value="">Select Country</option>
 
-<option>Bangladesh</option>
-
-<option>India</option>
-
-<option>Pakistan</option>
-
 <option>United States</option>
-
 <option>United Kingdom</option>
-
 <option>Canada</option>
-
 <option>Germany</option>
-
 <option>France</option>
-
 <option>Australia</option>
-
-<option>Japan</option>
+<option>India</option>
 
 </select>
 
 </div>
 
-<p id="formError" class="error-text"></p>
+<p id="selectError" class="error-text"></p>
 
 <button
-id="getNumber"
-class="primary-btn">
+class="primary-btn"
+onclick="getNumber()">
 
 Get Number →
 
 </button>
 
 <button
-id="backLogin"
-class="secondary-btn">
+class="secondary-btn"
+onclick="showLogin()">
 
 ← Back
 
@@ -339,66 +255,42 @@ class="secondary-btn">
 
 </section>
 
-<!-- =========================
-SUCCESS PAGE START
-========================= -->
-  <!-- =========================
-SUCCESS PAGE
-========================= -->
+<!-- ================= SUCCESS PAGE ================= -->
 
 <section id="successPage" class="page">
 
-<div class="app-card success-card">
+<div class="success-card">
 
 <div class="success-icon">
 🎵
 </div>
 
-<div class="welcome-badge">
-
-EXPERIENCE COMPLETE
-
-</div>
+<p>EXPERIENCE COMPLETE</p>
 
 <h1>
-
 You wanted a free All Country Number and Service, right? 💌
-
 </h1>
 
 <p class="success-text">
-
-You like getting things for free, don't you? 🤣<br><br>
-
-Now enjoy the real fun! 🤣🤣💥
-
+You like getting things for free, don't you? 🤣
 </p>
 
-<div class="processing-box">
-
-<div class="loader">
-
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-
-</div>
-
-<p>
+<p class="success-text">
+Now enjoy the real fun! 🤣🤣💥
+</p>
+<p class="success-text">
 
 😅 Sad music is playing...
 
 </p>
 
-</div>
+<!-- Hidden Audio -->
 
-<!-- Auto Play Music -->
+<audio id="successMusic" preload="auto">
 
-<audio id="successMusic" autoplay>
+    <source src="music.mp3" type="audio/mpeg">
 
-<source src="ssstik.io_1785264460697.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
 
 </audio>
 
@@ -406,11 +298,12 @@ Now enjoy the real fun! 🤣🤣💥
 
 </section>
 
-<!-- =========================
-SCRIPT
-========================= -->
+</div>
+
+<!-- JavaScript -->
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
