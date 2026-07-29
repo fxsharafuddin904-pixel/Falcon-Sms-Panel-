@@ -9,320 +9,58 @@
 <title>Birthday Surprise ❤️</title>
 
 
-<!-- Part 2 CSS এখানে যাবে -->
-
-
-</head>
-
-
-<body>
-
-
-
-<!-- MUSIC BUTTON -->
-
-<button id="musicBtn">
-🎵 Music চালু করুন
-</button>
-
-
-
-<audio id="music" loop>
-
-<source src="music.mp3" type="audio/mpeg">
-
-</audio>
-
-
-
-
-
-<!-- STORY WEBSITE -->
-
-
-<div id="mainPage">
-
-
-
-<div class="story card">
-
-
-
-
-
-
-<!-- STEP 1 -->
-
-<section class="step active">
-
-
-<h1>
-🌙 শুরু
-</h1>
-
-
-<p>
-
-আজ অনেক কিছু বলার আছে... জানি, তুমি হয়তো আজ আর আমার জীবনের অংশ নও।  
-
-তবুও আজকের দিনটা তোমার... তাই কিছু কথা বলতে চাই। 🌸
-
-</p>
-
-
-<button onclick="nextStep()">
-
-➡️ পরের পৃষ্ঠা
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- STEP 2 -->
-
-
-<section class="step">
-
-
-<h1>
-💭 স্মৃতি
-</h1>
-
-
-<p>
-
-এক সময় প্রতিদিন কথা হতো... হাসি ছিল... অভিমান ছিল...
-
-আজ সেগুলো শুধু স্মৃতি।
-
-কিন্তু স্মৃতিগুলো আজও মিথ্যা নয়। 💙
-
-</p>
-
-
-<button onclick="nextStep()">
-
-➡️ আরও পড়ো
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- STEP 3 -->
-
-
-<section class="step">
-
-
-<h1>
-🌧️ সত্যি কথা
-</h1>
-
-
-<p>
-
-তুমি চলে গেছো... হয়তো সেটাই তোমার ভালো থাকার পথ ছিল।
-
-আমি আটকাইনি... কারণ ভালোবাসা কখনো জোর করে ধরে রাখা যায় না। 🌙
-
-</p>
-
-
-<button onclick="nextStep()">
-
-➡️ শেষ কথা
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- STEP 4 -->
-
-
-<section class="step">
-
-
-<h1>
-🎉 শুভ জন্মদিন
-</h1>
-
-
-<p>
-
-
-শুভ জন্মদিন! 🎂🎉
-
-<br><br>
-
-
-আল্লাহ যেন তোমার প্রতিটি স্বপ্ন পূরণ করেন।
-
-<br><br>
-
-
-তুমি সবসময় ভালো থেকো।
-
-<br><br>
-
-
-তোমার মুখের হাসি যেন কখনো হারিয়ে না যায়।
-
-<br><br>
-
-
-আমি তোমার জীবনে না থাকলেও, আমার দোয়া সবসময় থাকবে।
-
-<br><br>
-
-
-ভালো থেকো... শুভ জন্মদিন। ❤️
-
-
-</p>
-
-
-
-<button onclick="nextStep()">
-
-➡️ শেষ পৃষ্ঠা
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- STEP 5 -->
-
-
-<section class="step">
-
-
-<h1>
-🌌 শেষ
-</h1>
-
-
-<p>
-
-কিছু মানুষ গল্প হয়ে যায়...
-
-<br><br>
-
-কিন্তু কিছু গল্প কখনো শেষ হয় না।
-
-<br><br>
-
-ভালো থেকো।
-
-<br><br>
-
-বিদায়... 🌙❤️
-
-</p>
-
-
-
-<h3>
-Made with ❤️
-</h3>
-
-
-</section>
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- Part 3 JavaScript এখানে যাবে -->
-
-
-</body>
-
-</html>
 <style>
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
 }
 
 
 
 body{
 
-    min-height:100vh;
-    background:
-    linear-gradient(135deg,#020617,#0f172a,#172554);
+min-height:100vh;
 
-    color:white;
-    overflow:hidden;
+background:
+linear-gradient(135deg,#020617,#0f172a,#172554);
+
+color:white;
+
+overflow:hidden;
 
 }
 
 
 
-/* Main Page */
+
+
+/* Main Area */
 
 
 #mainPage{
 
-    width:100%;
-    height:100vh;
+width:100%;
+height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
+
+
+
 
 
 
@@ -331,24 +69,34 @@ body{
 
 .card{
 
-    width:90%;
-    max-width:450px;
 
-    padding:35px 25px;
+width:90%;
 
-    background:
-    rgba(255,255,255,0.10);
+max-width:450px;
 
-    border-radius:25px;
 
-    backdrop-filter:blur(15px);
+padding:35px 25px;
 
-    border:1px solid rgba(255,255,255,0.15);
 
-    box-shadow:
-    0 0 40px rgba(0,0,0,0.5);
+background:
+rgba(255,255,255,0.10);
 
-    text-align:center;
+
+border-radius:25px;
+
+
+backdrop-filter:blur(15px);
+
+
+border:1px solid rgba(255,255,255,0.15);
+
+
+box-shadow:
+0 0 40px rgba(0,0,0,.5);
+
+
+text-align:center;
+
 
 }
 
@@ -358,11 +106,15 @@ body{
 
 h1{
 
-    font-size:30px;
-    margin-bottom:20px;
 
-    text-shadow:
-    0 0 15px #60a5fa;
+font-size:30px;
+
+margin-bottom:20px;
+
+
+text-shadow:
+0 0 15px #60a5fa;
+
 
 }
 
@@ -371,22 +123,27 @@ h1{
 
 p{
 
-    font-size:16px;
 
-    line-height:1.9;
+font-size:16px;
 
-    color:#e5e7eb;
+line-height:1.9;
+
+color:#e5e7eb;
+
 
 }
+
 
 
 
 
 h3{
 
-    margin-top:25px;
 
-    color:#f9a8d4;
+margin-top:25px;
+
+color:#f9a8d4;
+
 
 }
 
@@ -394,30 +151,39 @@ h3{
 
 
 
-
-/* Button */
+/* Buttons */
 
 
 button{
 
-    margin-top:25px;
 
-    padding:13px 30px;
+margin-top:25px;
 
-    border:none;
 
-    border-radius:50px;
+padding:13px 30px;
 
-    background:
-    linear-gradient(45deg,#2563eb,#9333ea);
 
-    color:white;
+border:none;
 
-    font-size:16px;
 
-    cursor:pointer;
+border-radius:50px;
 
-    transition:.4s;
+
+background:
+linear-gradient(45deg,#2563eb,#9333ea);
+
+
+color:white;
+
+
+font-size:16px;
+
+
+cursor:pointer;
+
+
+transition:.4s;
+
 
 }
 
@@ -425,12 +191,16 @@ button{
 
 button:hover{
 
-    transform:scale(1.08);
 
-    box-shadow:
-    0 0 25px #60a5fa;
+transform:scale(1.08);
+
+
+box-shadow:
+0 0 25px #60a5fa;
+
 
 }
+
 
 
 
@@ -440,15 +210,21 @@ button:hover{
 
 #musicBtn{
 
-    position:fixed;
 
-    top:20px;
+position:fixed;
 
-    right:20px;
 
-    z-index:10;
+top:20px;
+
+
+right:20px;
+
+
+z-index:10;
+
 
 }
+
 
 
 
@@ -459,9 +235,12 @@ button:hover{
 
 .step{
 
-    display:none;
 
-    animation:show 1s ease;
+display:none;
+
+
+animation:fade 1s ease;
+
 
 }
 
@@ -469,7 +248,9 @@ button:hover{
 
 .step.active{
 
-    display:block;
+
+display:block;
+
 
 }
 
@@ -477,23 +258,30 @@ button:hover{
 
 
 
-@keyframes show{
+@keyframes fade{
+
 
 from{
+
 
 opacity:0;
 
 transform:translateY(40px);
 
+
 }
 
+
 to{
+
 
 opacity:1;
 
 transform:translateY(0);
 
+
 }
+
 
 }
 
@@ -508,25 +296,33 @@ transform:translateY(0);
 
 body::before{
 
+
 content:"❤️ ✨ ❤️ ✨ ❤️";
+
 
 position:absolute;
 
-bottom:-50px;
+
+bottom:-60px;
+
 
 left:20%;
 
-font-size:35px;
+
+font-size:40px;
+
 
 opacity:.25;
 
-animation:heart 12s linear infinite;
+
+animation:float 12s linear infinite;
+
 
 }
 
 
 
-@keyframes heart{
+@keyframes float{
 
 
 0%{
@@ -550,47 +346,56 @@ transform:translateY(-120vh);
 
 
 
-/* Falling Stars */
+
+/* Stars */
 
 
 body::after{
 
-content:"✦     ✧       ✦       ✧";
+
+content:"✦  ✧  ✦  ✧  ✦";
+
 
 position:absolute;
 
-top:10%;
+
+top:15%;
+
 
 left:10%;
 
-font-size:45px;
 
-opacity:.25;
+font-size:50px;
 
-animation:stars 3s infinite alternate;
+
+opacity:.3;
+
+
+animation:blink 3s infinite alternate;
+
 
 }
 
 
 
-@keyframes stars{
+@keyframes blink{
+
 
 from{
 
-opacity:.15;
+opacity:.2;
 
 }
 
 
 to{
 
-opacity:.6;
+opacity:.7;
 
 }
 
 
 }
-
 
 
 
@@ -621,18 +426,226 @@ font-size:15px;
 }
 
 
-
 }
 
 
+    </style>
 
-</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- Music Button -->
+
+<button id="musicBtn">
+🎵 Music চালু করুন
+</button>
+
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+
+
+
+<!-- Main Story -->
+
+<div id="mainPage">
+
+
+<div class="card">
+
+
+
+<!-- Step 1 -->
+
+<div class="step active">
+
+
+<h1>🌙 শুরু</h1>
+
+
+<p>
+
+আজ অনেক কিছু বলার আছে... জানি, তুমি হয়তো আজ আর আমার জীবনের অংশ নও।
+
+তবুও আজকের দিনটা তোমার... তাই কিছু কথা বলতে চাই। 🌸
+
+</p>
+
+
+<button onclick="nextStep()">
+➡️ পরের পৃষ্ঠা
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- Step 2 -->
+
+<div class="step">
+
+
+<h1>💭 স্মৃতি</h1>
+
+
+<p>
+
+এক সময় প্রতিদিন কথা হতো... হাসি ছিল... অভিমান ছিল...
+
+আজ সেগুলো শুধু স্মৃতি।
+
+কিন্তু স্মৃতিগুলো আজও মিথ্যা নয়। 💙
+
+</p>
+
+
+<button onclick="nextStep()">
+➡️ আরও পড়ো
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- Step 3 -->
+
+<div class="step">
+
+
+<h1>🌧️ সত্যি কথা</h1>
+
+
+<p>
+
+তুমি চলে গেছো... হয়তো সেটাই তোমার ভালো থাকার পথ ছিল।
+
+আমি আটকাইনি... কারণ ভালোবাসা কখনো জোর করে ধরে রাখা যায় না। 🌙
+
+</p>
+
+
+<button onclick="nextStep()">
+➡️ শেষ কথা
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- Step 4 -->
+
+<div class="step">
+
+
+<h1>🎉 শুভ জন্মদিন</h1>
+
+
+<p>
+
+শুভ জন্মদিন! 🎂🎉
+
+<br><br>
+
+আল্লাহ যেন তোমার প্রতিটি স্বপ্ন পূরণ করেন।
+
+<br><br>
+
+তুমি সবসময় ভালো থেকো।
+
+<br><br>
+
+তোমার মুখের হাসি যেন কখনো হারিয়ে না যায়।
+
+<br><br>
+
+আমি তোমার জীবনে না থাকলেও, আমার দোয়া সবসময় থাকবে।
+
+<br><br>
+
+ভালো থেকো... শুভ জন্মদিন। ❤️
+
+</p>
+
+
+<button onclick="nextStep()">
+➡️ শেষ পৃষ্ঠা
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- Step 5 -->
+
+<div class="step">
+
+
+<h1>🌌 শেষ</h1>
+
+
+<p>
+
+কিছু মানুষ গল্প হয়ে যায়...
+
+<br><br>
+
+কিন্তু কিছু গল্প কখনো শেষ হয় না।
+
+<br><br>
+
+ভালো থেকো।
+
+<br><br>
+
+বিদায়... 🌙❤️
+
+</p>
+
+
+<h3>
+Made with ❤️
+</h3>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
 <script>
 
 
-// =====================
-// STEP CHANGE SYSTEM
-// =====================
+// ==========================
+// STEP CHANGE
+// ==========================
 
 
 let currentStep = 0;
@@ -665,81 +678,93 @@ function nextStep(){
 
 
 
-// =====================
-// MUSIC SYSTEM
-// =====================
+// ==========================
+// MUSIC CONTROL
+// ==========================
 
 
-const music = document.getElementById("music");
-
-const musicBtn = document.getElementById("musicBtn");
-
+const music =
+document.getElementById("music");
 
 
-musicBtn.addEventListener("click",function(){
+const musicBtn =
+document.getElementById("musicBtn");
+
+
+
+musicBtn.onclick = function(){
 
 
     music.play();
 
 
     musicBtn.innerHTML =
-    "🎵 Music চলছে";
+    "🎵 Music চলছে ❤️";
 
 
-});
-
-
-
+};
 
 
 
 
-// =====================
-// TYPING EFFECT
-// =====================
 
 
-const firstText =
+
+// ==========================
+// TYPING EFFECT (STEP 1)
+// ==========================
+
+
+const firstParagraph =
 document.querySelector(".step.active p");
 
 
-let text =
-firstText.innerHTML;
 
-
-firstText.innerHTML="";
-
-
-let index=0;
+let message =
+firstParagraph.innerHTML;
 
 
 
-function typing(){
+firstParagraph.innerHTML="";
 
 
-if(index < text.length){
+
+let count = 0;
 
 
-firstText.innerHTML += text.charAt(index);
+
+function typingEffect(){
 
 
-index++;
+    if(count < message.length){
 
 
-setTimeout(typing,40);
+        firstParagraph.innerHTML += message.charAt(count);
+
+
+        count++;
+
+
+        setTimeout(typingEffect,45);
+
+
+    }
 
 
 }
 
 
-}
 
-
-
-typing();
+typingEffect();
 
 
 
 
 
 </script>
+
+
+
+</body>
+
+</html>
