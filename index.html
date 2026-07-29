@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FalconPanel - Premium Virtual Number</title>
+<title>FalconPanel</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -23,15 +23,11 @@
 <div class="bg-glow glow-two"></div>
 <div class="bg-glow glow-three"></div>
 
-<div class="fake-tag">
-FAKE WEBSITE
-</div>
-
 <!-- =========================
 WELCOME PAGE
 ========================= -->
 
-<section class="page active" id="welcomePage">
+<section id="welcomePage" class="page active">
 
 <div class="welcome-card">
 
@@ -41,15 +37,11 @@ WELCOME PAGE
 🌍
 </div>
 
-<div>
+<div class="brand-info">
 
-<div class="brand-name">
-FalconPanel
-</div>
+<h2>FalconPanel</h2>
 
-<div class="brand-subtitle">
-Premium Virtual Number Service
-</div>
+<p>Premium Virtual Number Service</p>
 
 </div>
 
@@ -57,28 +49,26 @@ Premium Virtual Number Service
 
 <div class="welcome-content">
 
-<div class="welcome-badge">
+<span class="welcome-badge">
 
-PREMIUM ACCESS
+WELCOME
 
-</div>
+</span>
 
 <h1>
 
-Virtual Number
-
-<span>Worldwide Access</span>
+Welcome to <span>FalconPanel</span>
 
 </h1>
 
-<p class="welcome-description">
+<p>
 
-Get access to virtual numbers from almost every country.
+From here you can get virtual numbers from all countries.
 
-Premium SMS service starting from only
-<b>$0.013 / SMS</b>.
+<br><br>
 
-Fast • Secure • Reliable
+SMS Cost:
+<strong>$0.013 / SMS</strong>
 
 </p>
 
@@ -88,7 +78,7 @@ Fast • Secure • Reliable
 
 <span>🌍</span>
 
-<strong>190+</strong>
+<h3>190+</h3>
 
 <small>Countries</small>
 
@@ -98,9 +88,9 @@ Fast • Secure • Reliable
 
 <span>⚡</span>
 
-<strong>Fast</strong>
+<h3>Fast</h3>
 
-<small>Instant</small>
+<small>Delivery</small>
 
 </div>
 
@@ -108,27 +98,27 @@ Fast • Secure • Reliable
 
 <span>🔒</span>
 
-<strong>Secure</strong>
+<h3>Secure</h3>
 
-<small>Private</small>
+<small>Access</small>
 
 </div>
 
 </div>
 
 <button
-class="primary-btn"
-id="getStarted">
+id="getStarted"
+class="primary-btn">
 
 Get Started →
 
 </button>
 
-<p class="secure-note">
+<div class="bottom-note">
 
-Trusted Premium Virtual Number Platform
+Trusted Worldwide Virtual Number Provider
 
-</p>
+</div>
 
 </div>
 
@@ -136,12 +126,14 @@ Trusted Premium Virtual Number Platform
 
 </section>
 
-<!-- LOGIN PAGE START -->
+<!-- =========================
+LOGIN PAGE START
+========================= -->
   <!-- =========================
 LOGIN PAGE
 ========================= -->
 
-<section class="page" id="loginPage">
+<section id="loginPage" class="page">
 
 <div class="app-card">
 
@@ -151,15 +143,11 @@ LOGIN PAGE
 🌍
 </div>
 
-<div>
+<div class="brand-info">
 
-<div class="brand-name">
-FalconPanel
-</div>
+<h2>FalconPanel</h2>
 
-<div class="brand-subtitle">
-Premium Virtual Number Service
-</div>
+<p>Premium Virtual Number Service</p>
 
 </div>
 
@@ -167,40 +155,28 @@ Premium Virtual Number Service
 
 <div class="section-heading">
 
-<div class="mini-label">
-TEST ACCOUNT
-</div>
-
-<h2>
-Login Required
-</h2>
+<h2>Test Account</h2>
 
 <p>
-
-Please sign in with the authorized business account to continue accessing our premium virtual number service.
-
+Please log in first to access our virtual number service.
 </p>
 
 </div>
 
 <div class="form-group">
 
-<label>
-Business Gmail
-</label>
+<label>Business Gmail</label>
 
 <input
 type="email"
 id="gmail"
-placeholder="Enter Business Gmail">
+placeholder="Enter your Business Gmail">
 
 </div>
 
 <div class="form-group">
 
-<label>
-Password
-</label>
+<label>Password</label>
 
 <input
 type="text"
@@ -210,106 +186,25 @@ readonly>
 
 </div>
 
-<div id="loginError" class="error"></div>
+<p id="loginError" class="error-text"></p>
 
 <button
-class="primary-btn"
-id="loginBtn">
+id="loginBtn"
+class="primary-btn">
 
 Login →
 
 </button>
 
 <button
-class="back-btn"
-id="backWelcome">
+id="backWelcome"
+class="secondary-btn">
 
 ← Back
 
 </button>
 
 </div>
-
-</section>
-
-<!-- PLATFORM PAGE START -->
-  <!-- =========================
-LOGIN PAGE
-========================= -->
-
-<section class="page" id="loginPage">
-
-    <div class="app-card">
-
-        <div class="top-brand">
-
-            <div class="brand-icon">🌍</div>
-
-            <div>
-                <div class="brand-name">FalconPanel</div>
-                <div class="brand-subtitle">
-                    Premium Virtual Number Service
-                </div>
-            </div>
-
-        </div>
-
-        <div class="section-heading">
-
-            <div class="mini-label">
-                TEST ACCOUNT
-            </div>
-
-            <h2>Login Required</h2>
-
-            <p>
-                Please sign in with the authorized business account to continue.
-            </p>
-
-        </div>
-
-        <div class="form-group">
-
-            <label>Business Gmail</label>
-
-            <input
-                type="email"
-                id="gmail"
-                placeholder="Enter Business Gmail">
-
-        </div>
-
-        <div class="form-group">
-
-            <label>Password</label>
-
-            <input
-                type="text"
-                id="password"
-                value="1234"
-                readonly>
-
-        </div>
-
-        <div class="error" id="loginError"></div>
-
-        <button
-            class="primary-btn"
-            id="loginBtn">
-
-            Login →
-
-        </button>
-
-        <button
-            class="back-btn"
-            id="backWelcome">
-
-            ← Back
-
-        </button>
-
-    </div>
 
 </section>
 
@@ -320,21 +215,21 @@ PLATFORM PAGE START
 PLATFORM PAGE
 ========================= -->
 
-<section class="page" id="platformPage">
+<section id="platformPage" class="page">
 
 <div class="app-card">
 
 <div class="top-brand">
 
-<div class="brand-icon">🌍</div>
-
-<div>
-
-<div class="brand-name">FalconPanel</div>
-
-<div class="brand-subtitle">
-Premium Virtual Number Service
+<div class="brand-icon">
+🌍
 </div>
+
+<div class="brand-info">
+
+<h2>FalconPanel</h2>
+
+<p>Premium Virtual Number Service</p>
 
 </div>
 
@@ -342,35 +237,49 @@ Premium Virtual Number Service
 
 <div class="section-heading">
 
-<div class="mini-label">
+<span class="welcome-badge">
+
 SELECT SERVICE
-</div>
+
+</span>
 
 <h2>
+
 Choose Platform & Country
+
 </h2>
 
 <p>
-Select your preferred platform and the country you want to use before continuing.
+
+Select your platform and country below.
+
 </p>
 
 </div>
 
 <div class="form-group">
 
-<label>Select Your Platform</label>
+<label>Platform</label>
 
 <select id="platform">
 
-<option value="">-- Select Platform --</option>
+<option value="">Select Platform</option>
 
-<option value="Telegram">Telegram</option>
+<option>WhatsApp</option>
 
-<option value="WhatsApp">WhatsApp</option>
+<option>Telegram</option>
 
-<option value="TikTok">TikTok</option>
+<option>Facebook</option>
 
-<option value="IMO">IMO</option>
+<option>Instagram</option>
+
+<option>Google</option>
+
+<option>TikTok</option>
+
+<option>Discord</option>
+
+<option>X (Twitter)</option>
 
 </select>
 
@@ -378,36 +287,49 @@ Select your preferred platform and the country you want to use before continuing
 
 <div class="form-group">
 
-<label>Select Country</label>
+<label>Country</label>
 
 <select id="country">
 
-<option value="">-- Select Country --</option>
+<option value="">Select Country</option>
 
 <option>Bangladesh</option>
-<option>Syria</option>
-<option>Lebanon</option>
-<option>Morocco</option>
-<option>Egypt</option>
-<option>Saudi Arabia</option>
+
+<option>India</option>
+
+<option>Pakistan</option>
+
+<option>United States</option>
+
+<option>United Kingdom</option>
+
+<option>Canada</option>
+
+<option>Germany</option>
+
+<option>France</option>
+
+<option>Australia</option>
+
+<option>Japan</option>
 
 </select>
 
 </div>
 
-<div class="error" id="formError"></div>
+<p id="formError" class="error-text"></p>
 
 <button
-class="primary-btn"
-id="getNumber">
+id="getNumber"
+class="primary-btn">
 
 Get Number →
 
 </button>
 
 <button
-class="back-btn"
-id="backLogin">
+id="backLogin"
+class="secondary-btn">
 
 ← Back
 
@@ -417,59 +339,76 @@ id="backLogin">
 
 </section>
 
-<!-- SUCCESS PAGE START -->
+<!-- =========================
+SUCCESS PAGE START
+========================= -->
   <!-- =========================
 SUCCESS PAGE
 ========================= -->
 
-<section class="page" id="successPage">
+<section id="successPage" class="page">
 
-    <div class="music-card">
+<div class="app-card success-card">
 
-        <div class="music-orb">
-            🌍
-        </div>
+<div class="success-icon">
+🎵
+</div>
 
-        <h2>Request Submitted</h2>
+<div class="welcome-badge">
 
-        <p>
-            Demo Mode<br>
-            This website is for UI demonstration only.
-        </p>
+EXPERIENCE COMPLETE
 
-        <div class="music-status">
+</div>
 
-            <div class="equalizer">
-                <i></i>
-                <i></i>
-                <i></i>
-                <i></i>
-                <i></i>
-            </div>
+<h1>
 
-            <span>Processing...</span>
+You wanted a free All Country Number and Service, right? 💌
 
-        </div>
+</h1>
 
-        <button
-            class="music-btn"
-            id="backHome">
+<p class="success-text">
 
-            Back To Home
+You like getting things for free, don't you? 🤣<br><br>
 
-        </button>
+Now enjoy the real fun! 🤣🤣💥
 
-    </div>
+</p>
+
+<div class="processing-box">
+
+<div class="loader">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<p>
+
+😅 Sad music is playing...
+
+</p>
+
+</div>
+
+<!-- Auto Play Music -->
+
+<audio id="successMusic" autoplay>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+</div>
 
 </section>
 
-<!-- Audio -->
-
-<audio id="successMusic">
-    <source src="ssstik.io_1785264460697.mp3" type="audio/mpeg">
-</audio>
-
-<!-- Script -->
+<!-- =========================
+SCRIPT
+========================= -->
 
 <script src="script.js"></script>
 
