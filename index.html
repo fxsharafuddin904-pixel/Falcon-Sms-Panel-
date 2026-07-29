@@ -3,268 +3,1092 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FalconPanel</title>
 
-<link rel="stylesheet" href="style.css">
+<title>🎂 Golden Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#070707;
+color:white;
+overflow-x:hidden;
+}
+
+/* Scroll */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:gold;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+/* Loader */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:999999;
+}
+
+.loader-circle{
+width:90px;
+height:90px;
+border:8px solid #333;
+border-top:8px solid gold;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+.loader-text{
+margin-top:20px;
+font-size:22px;
+color:gold;
+letter-spacing:3px;
+}
+
+/* Navbar */
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(0,0,0,.4);
+
+backdrop-filter:blur(12px);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:bold;
+
+color:gold;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:25px;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+transition:.4s;
+
+font-size:15px;
+
+}
+
+nav ul li a:hover{
+
+color:gold;
+
+}
+
+/* Hero */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1500&q=80');
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.hero h1{
+
+font-size:65px;
+
+color:gold;
+
+margin-bottom:20px;
+
+}
+
+.hero h2{
+
+font-size:28px;
+
+font-weight:300;
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+max-width:700px;
+
+opacity:.8;
+
+line-height:1.8;
+
+}
+
+.start-btn{
+
+margin-top:35px;
+
+padding:16px 45px;
+
+border:none;
+
+border-radius:50px;
+
+background:gold;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.start-btn:hover{
+
+transform:scale(1.1);
+
+}
+
+/* Floating Hearts */
+
+.hearts{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.heart{
+
+position:absolute;
+
+bottom:-50px;
+
+font-size:20px;
+
+animation:float 10s linear infinite;
+
+opacity:.7;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+
+}
+
+}
+
+/* Sections */
+
+section{
+
+padding:100px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:50px;
+
+color:gold;
+
+}
+
+/* Letter */
+
+.letter{
+
+background:#111;
+
+padding:40px;
+
+border-radius:20px;
+
+line-height:2;
+
+font-size:18px;
+
+box-shadow:0 0 25px rgba(255,215,0,.2);
+
+}
+
+/* Cake */
+
+.cake-box{
+
+display:flex;
+
+justify-content:center;
+
+margin-top:60px;
+
+}
+
+.cake{
+
+font-size:170px;
+
+animation:bounce 2s infinite;
+
+cursor:pointer;
+
+}
+
+@keyframes bounce{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+/* Surprise */
+
+.gift{
+
+font-size:150px;
+
+text-align:center;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.gift:hover{
+
+transform:rotate(10deg) scale(1.1);
+
+}
+
+#giftMessage{
+
+display:none;
+
+margin-top:30px;
+
+text-align:center;
+
+font-size:22px;
+
+color:gold;
+
+}
+
+</style>
 
 </head>
+
 <body>
 
-<!-- HOME PAGE -->
+<div id="loader">
 
-<section id="home" class="page active">
+<div class="loader-circle"></div>
 
-<header>
+<div class="loader-text">
 
-<div class="logo-box">
-
-<div class="logo">🦅</div>
-
-<h2>FalconPanel</h2>
+Loading Birthday...
 
 </div>
 
-</header>
+</div>
 
-<div class="home-content">
+<div class="hearts" id="hearts"></div>
 
-<h4># Welcome to</h4>
+<nav>
 
-<h1>FalconPanel</h1>
+<div class="logo">🎂 Golden Birthday</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#letter">Letter</a></li>
+
+<li><a href="#cake">Cake</a></li>
+
+<li><a href="#gift">Gift</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero" id="home">
+
+<h1>Happy Birthday</h1>
+
+<h2>Ariana Noor ❤️</h2>
 
 <p>
-From here you can get virtual numbers from all countries.
+
+Today is a beautiful day filled with happiness, smiles and unforgettable memories.
+
+May every dream of yours come true and every moment bring endless joy.
+
 </p>
 
-<div class="stats">
+<button class="start-btn" onclick="document.getElementById('letter').scrollIntoView()">
 
-<div class="card">
-<h3>SMS Cost</h3>
-<span>$0.013 / SMS</span>
-</div>
+Start Journey
 
-<div class="card">
-<h3>🌍 190+</h3>
-<span>Countries</span>
-</div>
-
-<div class="card">
-<h3>⚡ Fast</h3>
-<span>Delivery</span>
-</div>
-
-<div class="card">
-<h3>🔒 Secure</h3>
-<span>Access</span>
-</div>
-
-</div>
-
-<button id="startBtn">
-Get Started →
 </button>
+
+  </section>
+  <!-- ================= LETTER SECTION ================= -->
+
+<section id="letter">
+
+<h2 class="title">💌 A Special Letter</h2>
+
+<div class="letter">
+
+<p id="typing"></p>
 
 </div>
 
 </section>
-<!-- LOGIN PAGE -->
 
-<section id="login" class="page">
+<!-- ================= CAKE SECTION ================= -->
 
-<header>
+<section id="cake">
 
-<div class="logo-box">
+<h2 class="title">🎂 Make A Wish</h2>
 
-<div class="logo">🦅</div>
+<div class="cake-box">
 
-<h2>FalconPanel</h2>
+<div class="cake" onclick="cakeClick()">
+
+🎂
 
 </div>
 
-</header>
+</div>
 
-<div class="login-box">
-
-<h1>Premium Virtual Number Service</h1>
-
-<p>
-Please log in first to access our virtual number service.
+<p id="cakeText"
+style="text-align:center;margin-top:25px;font-size:22px;color:gold;">
+Click the cake 🎂
 </p>
 
-<label>Business Gmail</label>
+</section>
 
-<input
-type="email"
-id="gmail"
-placeholder="Enter your Business Gmail">
+<!-- ================= SURPRISE SECTION ================= -->
 
-<label>Password</label>
+<section id="gift">
 
-<input
-type="text"
-id="password"
-placeholder="Click here"
-onclick="autoPassword()">
+<h2 class="title">🎁 Surprise Gift</h2>
 
-<button id="loginBtn">
-Login ➡️
-</button>
+<div class="gift"
 
-<button id="backHome">
-⬅️ Back
-</button>
+onclick="openGift()">
+
+🎁
+
+</div>
+
+<div id="giftMessage">
+
+<h2>✨ Surprise ✨</h2>
+
+<p style="margin-top:20px;line-height:2;">
+
+You are stronger than yesterday.
+
+You are brighter than the stars.
+
+Keep smiling because the world becomes beautiful with your smile.
+
+Happy Birthday ❤️
+
+</p>
 
 </div>
 
 </section>
-<!-- SERVICE PAGE -->
 
-<section id="service" class="page">
+<style>
 
-<header>
+/* Surprise Animation */
 
-<div class="logo-box">
+@keyframes zoom{
 
-<div class="logo">🦅</div>
+0%{
 
-<h2>FalconPanel</h2>
+transform:scale(.5);
 
-</div>
+opacity:0;
 
-</header>
+}
 
-<div class="service-box">
+100%{
 
-<h1>Premium Virtual Number Service</h1>
+transform:scale(1);
 
-<h2>SELECT SERVICE</h2>
+opacity:1;
 
-<p>Choose Platform & Country</p>
+}
 
-<p>Select your platform and country below.</p>
+}
 
-<label>Platform</label>
+.show{
 
-<select id="platform">
+display:block !important;
 
-<option value="">Select Platform</option>
+animation:zoom .7s;
 
-<option>Telegram</option>
+}
 
-<option>WhatsApp</option>
+/* Responsive */
 
-<option>TikTok</option>
+@media(max-width:768px){
 
-<option>IMO</option>
+.hero h1{
 
-</select>
+font-size:42px;
 
-<label>Country</label>
+}
 
-<select id="country">
+.hero h2{
 
-<option value="">Select Country</option>
+font-size:22px;
 
-<option>Bangladesh</option>
+}
 
-<option>India</option>
+.title{
 
-<option>Pakistan</option>
+font-size:30px;
 
-<option>USA</option>
+}
 
-<option>United Kingdom</option>
+.cake{
 
-<option>Canada</option>
+font-size:120px;
 
-<option>Germany</option>
+}
 
-<option>France</option>
+.gift{
 
-<option>Japan</option>
+font-size:110px;
 
-<option>China</option>
+}
 
-<option>Australia</option>
+nav{
 
-<option>Singapore</option>
+padding:15px;
 
-<option>Malaysia</option>
+}
 
-<option>Turkey</option>
+nav ul{
 
-<option>Saudi Arabia</option>
+gap:12px;
 
-<option>UAE</option>
+}
 
-</select>
+}
 
-<button id="getNumber">
-Get Number
-</button>
+</style>
 
-<button id="backLogin">
-⬅️ Back
-</button>
+<script>
 
-</div>
+/* Loader */
+
+window.onload=function(){
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},1800);
+
+}
+
+/* Floating Hearts */
+
+const hearts=document.getElementById("hearts");
+
+for(let i=0;i<35;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.animationDuration=(6+Math.random()*6)+"s";
+
+h.style.fontSize=(15+Math.random()*25)+"px";
+
+h.style.opacity=Math.random();
+
+hearts.appendChild(h);
+
+}
+
+/* Typing Letter */
+
+const text=
+
+`Dear Ariana Noor,
+
+Today is your special day.
+
+I wish your life becomes brighter with every sunrise.
+
+May happiness follow you forever.
+
+May every dream you have come true.
+
+Never stop smiling.
+
+Never stop believing in yourself.
+
+Happy Birthday ❤️
+
+— Ryan Ahmed`;
+
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,35);
+
+}
+
+}
+
+typing();
+
+/* Cake */
+
+function cakeClick(){
+
+document.getElementById("cakeText").innerHTML=
+
+"🎉 Happy Birthday! Make a beautiful wish...";
+
+}
+
+/* Gift */
+
+function openGift(){
+
+document.getElementById("giftMessage")
+
+.classList.add("show");
+
+}
+  <!-- ================= REASONS SECTION ================= -->
+
+<section id="reasons">
+
+<h2 class="title">❤️ 50 Reasons</h2>
+
+<div id="reasonBox"></div>
 
 </section>
-<!-- FINAL PAGE -->
 
-<section id="final" class="page">
+<!-- ================= ROSE GARDEN ================= -->
 
-<header>
+<section id="roses">
 
-<div class="logo-box">
+<h2 class="title">🌹 Rose Garden</h2>
 
-<div class="logo">🦅</div>
+<div id="roseBox"></div>
 
-<h2>FalconPanel</h2>
-
-</div>
-
-</header>
-
-<div class="final-box">
-
-<div class="music-logo">
-🎵
-</div>
-
-<h1>EXPERIENCE COMPLETE</h1>
-
-<p>
-You wanted a free custom message and bombing,
-right?
+<p id="roseText"
+style="text-align:center;margin-top:25px;color:gold;font-size:20px;">
+Click any rose 🌹
 </p>
 
-<p>
-You like getting things for free, don't you?
-Now enjoy the real fun!
-</p>
+</section>
 
-<h2>
-😅 Sad music is playing...
-</h2>
+<!-- ================= MUSIC ================= -->
 
-<button id="musicToggle">
-🔇 OFF
-</button>
+<section id="music">
 
-<button id="backService">
-⬅️ Back
-</button>
+<h2 class="title">🎵 Music</h2>
 
-<audio id="sadMusic" loop>
-<source src="music.mp3" type="audio/mpeg">
+<div style="text-align:center;">
+
+<audio controls loop>
+
+<source src="music/song1.mp3" type="audio/mpeg">
+
 </audio>
 
 </div>
 
 </section>
 
-<script src="script.js"></script>
+<!-- ================= FINALE ================= -->
+
+<section id="finale">
+
+<h2 class="title">🎆 Happy Birthday</h2>
+
+<h1 style="text-align:center;font-size:70px;color:gold;">
+🎉 Ariana Noor 🎉
+</h1>
+
+<p style="text-align:center;font-size:22px;margin-top:20px;opacity:.9;">
+May your smile never fade.<br>
+Have a wonderful birthday ❤️
+</p>
+
+<div style="text-align:center;margin-top:40px;font-size:80px;animation:bounce 2s infinite;">
+🎊🎂🎉
+</div>
+
+</section>
+
+<style>
+
+#reasonBox{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.reason{
+
+background:#111;
+
+padding:20px;
+
+border-radius:15px;
+
+border:1px solid rgba(255,215,0,.2);
+
+transition:.4s;
+
+}
+
+.reason:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 20px rgba(255,215,0,.3);
+
+}
+
+#roseBox{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:25px;
+
+}
+
+.rose{
+
+font-size:55px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.rose:hover{
+
+transform:scale(1.25) rotate(10deg);
+
+}
+
+</style>
+
+<script>
+
+/* ===== Reasons ===== */
+
+const reasons=[
+
+"Your smile is beautiful ❤️",
+
+"You are kind",
+
+"You inspire others",
+
+"You are strong",
+
+"You never give up",
+
+"You spread happiness",
+
+"You are unique",
+
+"You are caring",
+
+"You are honest",
+
+"You are amazing"
+
+];
+
+const reasonBox=document.getElementById("reasonBox");
+
+for(let i=1;i<=50;i++){
+
+const card=document.createElement("div");
+
+card.className="reason";
+
+card.innerHTML="<h3>Reason "+i+"</h3><br>"+reasons[Math.floor(Math.random()*reasons.length)];
+
+reasonBox.appendChild(card);
+
+}
+
+/* ===== Roses ===== */
+
+const roseBox=document.getElementById("roseBox");
+
+const messages=[
+
+"Stay Happy ❤️",
+
+"You are Special 🌹",
+
+"Never Stop Smiling 😊",
+
+"Enjoy Your Day 🎉",
+
+"Dream Big ⭐",
+
+"Keep Shining ✨"
+
+];
+
+for(let i=0;i<24;i++){
+
+let r=document.createElement("div");
+
+r.className="rose";
+
+r.innerHTML="🌹";
+
+r.onclick=function(){
+
+document.getElementById("roseText").innerHTML=
+
+messages[Math.floor(Math.random()*messages.length)];
+
+};
+
+roseBox.appendChild(r);
+
+}
+
+</script>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>🎂 Golden Birthday</h2>
+
+<p>Made With ❤️ By Ryan Ahmed</p>
+
+<p>© 2026 All Rights Reserved.</p>
+
+</footer>
+
+<button id="topBtn" onclick="topFunction()">⬆</button>
+
+<style>
+
+/* Footer */
+
+footer{
+
+padding:50px 20px;
+
+background:#050505;
+
+text-align:center;
+
+border-top:1px solid rgba(255,215,0,.2);
+
+}
+
+footer h2{
+
+color:gold;
+
+margin-bottom:10px;
+
+}
+
+footer p{
+
+opacity:.8;
+
+margin:8px 0;
+
+}
+
+/* Top Button */
+
+#topBtn{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:gold;
+
+font-size:22px;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 0 15px gold;
+
+transition:.3s;
+
+}
+
+#topBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+/* Fireworks */
+
+.firework{
+
+position:fixed;
+
+font-size:30px;
+
+pointer-events:none;
+
+animation:boom 2s linear forwards;
+
+}
+
+@keyframes boom{
+
+0%{
+
+opacity:1;
+
+transform:translateY(0) scale(.3);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(-250px) scale(2);
+
+}
+
+}
+
+</style>
+
+<script>
+
+/* Top Button */
+
+window.onscroll=function(){
+
+const btn=document.getElementById("topBtn");
+
+if(document.documentElement.scrollTop>300){
+
+btn.style.display="block";
+
+}else{
+
+btn.style.display="none";
+
+}
+
+}
+
+function topFunction(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+/* Fireworks */
+
+function fireworks(){
+
+for(let i=0;i<20;i++){
+
+let f=document.createElement("div");
+
+f.className="firework";
+
+f.innerHTML=["🎆","✨","🎉","💖"][Math.floor(Math.random()*4)];
+
+f.style.left=Math.random()*100+"%";
+
+f.style.top=(60+Math.random()*30)+"%";
+
+document.body.appendChild(f);
+
+setTimeout(()=>{
+
+f.remove();
+
+},2000);
+
+}
+
+}
+
+setInterval(fireworks,4000);
+
+</script>
 
 </body>
 </html>
