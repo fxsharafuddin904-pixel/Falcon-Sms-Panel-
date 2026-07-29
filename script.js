@@ -4,15 +4,8 @@
 
 const welcomePage = document.getElementById("welcomePage");
 const loginPage = document.getElementById("loginPage");
-const platformPage = document.getElementById("platformPage");
+const selectPage = document.getElementById("selectPage");
 const successPage = document.getElementById("successPage");
-
-const getStarted = document.getElementById("getStarted");
-const loginBtn = document.getElementById("loginBtn");
-const getNumber = document.getElementById("getNumber");
-
-const backWelcome = document.getElementById("backWelcome");
-const backLogin = document.getElementById("backLogin");
 
 const gmail = document.getElementById("gmail");
 const password = document.getElementById("password");
@@ -21,228 +14,261 @@ const platform = document.getElementById("platform");
 const country = document.getElementById("country");
 
 const loginError = document.getElementById("loginError");
-const formError = document.getElementById("formError");
+const selectError = document.getElementById("selectError");
 
-const music = document.getElementById("successMusic");
+const bgMusic = document.getElementById("bgMusic");
+const successMusic = document.getElementById("successMusic");
+const musicBtn = document.getElementById("musicBtn");
 
 // =========================
-// LOGIN ACCOUNT
+// LOGIN DATA
 // =========================
 
 const BUSINESS_GMAIL = "falconpanel@gmail.com";
 const PASSWORD = "1234";
 
 // =========================
-// PAGE FUNCTION
+// PAGE FUNCTIONS
 // =========================
 
-function showPage(page){
+function hideAllPages(){
 
-    document.querySelectorAll(".page").forEach(item=>{
+    document.querySelectorAll(".page").forEach(page=>{
 
-        item.classList.remove("active");
+        page.classList.remove("active");
 
     });
 
-    page.classList.add("active");
+}
+
+function showWelcome(){
+
+    hideAllPages();
+
+    welcomePage.classList.add("active");
+
+}
+
+function showLogin(){
+
+    hideAllPages();
+
+    loginPage.classList.add("active");
+
+}
+
+function showSelect(){
+
+    hideAllPages();
+
+    selectPage.classList.add("active");
+
+}
+
+function showSuccess(){
+
+    hideAllPages();
+
+    successPage.classList.add("active");
 
 }
 
 // =========================
-// GET STARTED
+// MUSIC BUTTON
+// OFF → CLICK = PLAY
 // =========================
 
-getStarted.addEventListener("click",()=>{
+function toggleMusic(){
 
-    showPage(loginPage);
+    if(bgMusic.paused){
 
-});
+        bgMusic.play();
 
-// =========================
-// BACK BUTTONS
-// =========================
+    }else{
 
-backWelcome.addEventListener("click",()=>{
+        bgMusic.pause();
 
-    showPage(welcomePage);
+        bgMusic.currentTime = 0;
 
-});
+    }
 
-backLogin.addEventListener("click",()=>{
-
-    showPage(loginPage);
-
-});
+}
 // =========================
 // LOGIN SYSTEM
 // =========================
 
-loginBtn.addEventListener("click", () => {
+function loginUser(){
 
     loginError.textContent = "";
 
     const userGmail = gmail.value.trim().toLowerCase();
     const userPassword = password.value.trim();
 
-    if (userGmail === "") {
+    if(userGmail === ""){
 
         loginError.textContent = "Please enter your Business Gmail.";
-        gmail.classList.add("shake");
-
-        setTimeout(() => {
-            gmail.classList.remove("shake");
-        }, 400);
 
         return;
 
     }
 
-    if (userGmail !== BUSINESS_GMAIL) {
+    if(userGmail !== BUSINESS_GMAIL.toLowerCase()){
 
         loginError.textContent = "Invalid Business Gmail.";
-        gmail.classList.add("shake");
-
-        setTimeout(() => {
-            gmail.classList.remove("shake");
-        }, 400);
 
         return;
 
     }
 
-    if (userPassword !== PASSWORD) {
+    if(userPassword !== PASSWORD){
 
         loginError.textContent = "Invalid Password.";
-        password.classList.add("shake");
-
-        setTimeout(() => {
-            password.classList.remove("shake");
-        }, 400);
 
         return;
 
     }
 
-    loginError.textContent = "";
+    showSelect();
 
-    showPage(platformPage);
+}
+
+// =========================
+// ENTER KEY LOGIN
+// =========================
+
+gmail.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+
+        loginUser();
+
+    }
+
+});
+
+password.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+
+        loginUser();
+
+    }
 
 });
 // =========================
 // GET NUMBER
 // =========================
 
-getNumber.addEventListener("click", () => {
+function getNumber(){
 
-    formError.textContent = "";
+    selectError.textContent = "";
 
-    if (platform.value === "") {
+    if(platform.value===""){
 
-        formError.textContent = "Please select a platform.";
-
-        platform.classList.add("shake");
-
-        setTimeout(() => {
-            platform.classList.remove("shake");
-        }, 400);
+        selectError.textContent = "Please select a platform.";
 
         return;
 
     }
 
-    if (country.value === "") {
+    if(country.value===""){
 
-        formError.textContent = "Please select a country.";
-
-        country.classList.add("shake");
-
-        setTimeout(() => {
-            country.classList.remove("shake");
-        }, 400);
+        selectError.textContent = "Please select a country.";
 
         return;
 
     }
 
-    // Play Music
+    // Stop background music
+    if(bgMusic){
 
-    if (music) {
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
 
-        music.currentTime = 0;
+    }
 
-        music.play().catch(err => {
-            console.log("Music Error:", err);
+    // Show Success Page
+    showSuccess();
+
+    // Play sad music automatically
+    if(successMusic){
+
+        successMusic.currentTime = 0;
+
+        successMusic.play().catch(function(error){
+
+            console.log(error);
+
         });
 
     }
 
-    // No Popup
-    // Direct Success Page
+}
 
-    showPage(successPage);
+// =========================
+// STOP SUCCESS MUSIC
+// =========================
+
+window.addEventListener("beforeunload",function(){
+
+    if(successMusic){
+
+        successMusic.pause();
+
+        successMusic.currentTime = 0;
+
+    }
+
+});
+// =========================
+// CLEAR ERRORS
+// =========================
+
+gmail.addEventListener("input", () => {
+
+    loginError.textContent = "";
 
 });
 
-// =========================
-// CLEAR ERROR
-// =========================
-
 platform.addEventListener("change", () => {
 
-    formError.textContent = "";
+    selectError.textContent = "";
 
 });
 
 country.addEventListener("change", () => {
 
-    formError.textContent = "";
+    selectError.textContent = "";
 
 });
+
 // =========================
 // PAGE LOAD
 // =========================
 
-window.addEventListener("load", () => {
+window.onload = function(){
 
-    showPage(welcomePage);
+    showWelcome();
 
-});
+};
 
 // =========================
-// STOP MUSIC WHEN PAGE CLOSES
+// STOP ALL MUSIC WHEN LEAVING
 // =========================
 
-window.addEventListener("beforeunload", () => {
+window.addEventListener("beforeunload", function(){
 
-    if (music) {
+    if(bgMusic){
 
-        music.pause();
-        music.currentTime = 0;
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
 
     }
 
-});
+    if(successMusic){
 
-// =========================
-// OPTIONAL
-// Press Enter to Login
-// =========================
-
-gmail.addEventListener("keydown", (e) => {
-
-    if (e.key === "Enter") {
-
-        loginBtn.click();
-
-    }
-
-});
-
-password.addEventListener("keydown", (e) => {
-
-    if (e.key === "Enter") {
-
-        loginBtn.click();
+        successMusic.pause();
+        successMusic.currentTime = 0;
 
     }
 
