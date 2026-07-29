@@ -9,24 +9,24 @@ const successPage = document.getElementById("successPage");
 
 const getStarted = document.getElementById("getStarted");
 const loginBtn = document.getElementById("loginBtn");
+const getNumber = document.getElementById("getNumber");
+
 const backWelcome = document.getElementById("backWelcome");
 const backLogin = document.getElementById("backLogin");
-const backHome = document.getElementById("backHome");
 
 const gmail = document.getElementById("gmail");
 const password = document.getElementById("password");
 
-const loginError = document.getElementById("loginError");
-
 const platform = document.getElementById("platform");
 const country = document.getElementById("country");
-const getNumber = document.getElementById("getNumber");
+
+const loginError = document.getElementById("loginError");
 const formError = document.getElementById("formError");
 
 const music = document.getElementById("successMusic");
 
 // =========================
-// ACCOUNT
+// LOGIN ACCOUNT
 // =========================
 
 const BUSINESS_GMAIL = "falconpanel@gmail.com";
@@ -38,7 +38,7 @@ const PASSWORD = "1234";
 
 function showPage(page){
 
-    document.querySelectorAll(".page").forEach(function(item){
+    document.querySelectorAll(".page").forEach(item=>{
 
         item.classList.remove("active");
 
@@ -49,10 +49,10 @@ function showPage(page){
 }
 
 // =========================
-// WELCOME PAGE
+// GET STARTED
 // =========================
 
-getStarted.addEventListener("click",function(){
+getStarted.addEventListener("click",()=>{
 
     showPage(loginPage);
 
@@ -62,13 +62,13 @@ getStarted.addEventListener("click",function(){
 // BACK BUTTONS
 // =========================
 
-backWelcome.addEventListener("click",function(){
+backWelcome.addEventListener("click",()=>{
 
     showPage(welcomePage);
 
 });
 
-backLogin.addEventListener("click",function(){
+backLogin.addEventListener("click",()=>{
 
     showPage(loginPage);
 
@@ -77,7 +77,7 @@ backLogin.addEventListener("click",function(){
 // LOGIN SYSTEM
 // =========================
 
-loginBtn.addEventListener("click", function () {
+loginBtn.addEventListener("click", () => {
 
     loginError.textContent = "";
 
@@ -87,7 +87,6 @@ loginBtn.addEventListener("click", function () {
     if (userGmail === "") {
 
         loginError.textContent = "Please enter your Business Gmail.";
-
         gmail.classList.add("shake");
 
         setTimeout(() => {
@@ -101,7 +100,6 @@ loginBtn.addEventListener("click", function () {
     if (userGmail !== BUSINESS_GMAIL) {
 
         loginError.textContent = "Invalid Business Gmail.";
-
         gmail.classList.add("shake");
 
         setTimeout(() => {
@@ -115,7 +113,6 @@ loginBtn.addEventListener("click", function () {
     if (userPassword !== PASSWORD) {
 
         loginError.textContent = "Invalid Password.";
-
         password.classList.add("shake");
 
         setTimeout(() => {
@@ -135,13 +132,13 @@ loginBtn.addEventListener("click", function () {
 // GET NUMBER
 // =========================
 
-getNumber.addEventListener("click", function () {
+getNumber.addEventListener("click", () => {
 
     formError.textContent = "";
 
     if (platform.value === "") {
 
-        formError.textContent = "Please select your platform.";
+        formError.textContent = "Please select a platform.";
 
         platform.classList.add("shake");
 
@@ -155,7 +152,7 @@ getNumber.addEventListener("click", function () {
 
     if (country.value === "") {
 
-        formError.textContent = "Please select your country.";
+        formError.textContent = "Please select a country.";
 
         country.classList.add("shake");
 
@@ -167,78 +164,92 @@ getNumber.addEventListener("click", function () {
 
     }
 
+    // Play Music
+
     if (music) {
 
         music.currentTime = 0;
 
-        music.play().catch(() => {});
+        music.play().catch(err => {
+            console.log("Music Error:", err);
+        });
 
     }
 
-    alert("Number Send Successful");
+    // No Popup
+    // Direct Success Page
 
     showPage(successPage);
 
 });
 
-// Clear errors when changing selections
-
-platform.addEventListener("change", function () {
-
-    formError.textContent = "";
-
-});
-
-country.addEventListener("change", function () {
-
-    formError.textContent = "";
-
-});
 // =========================
-// BACK TO HOME
+// CLEAR ERROR
 // =========================
 
-backHome.addEventListener("click", function () {
+platform.addEventListener("change", () => {
 
-    if (music) {
-        music.pause();
-        music.currentTime = 0;
-    }
-
-    gmail.value = "";
-    password.value = "1234";
-
-    platform.selectedIndex = 0;
-    country.selectedIndex = 0;
-
-    loginError.textContent = "";
     formError.textContent = "";
-
-    showPage(welcomePage);
 
 });
 
+country.addEventListener("change", () => {
+
+    formError.textContent = "";
+
+});
 // =========================
 // PAGE LOAD
 // =========================
 
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
 
     showPage(welcomePage);
 
 });
 
 // =========================
-// STOP MUSIC ON EXIT
+// STOP MUSIC WHEN PAGE CLOSES
 // =========================
 
-window.addEventListener("beforeunload", function () {
+window.addEventListener("beforeunload", () => {
 
     if (music) {
+
         music.pause();
         music.currentTime = 0;
+
     }
 
 });
+
+// =========================
+// OPTIONAL
+// Press Enter to Login
+// =========================
+
+gmail.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter") {
+
+        loginBtn.click();
+
+    }
+
+});
+
+password.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter") {
+
+        loginBtn.click();
+
+    }
+
+});
+
+// =========================
+// SCRIPT READY
+// =========================
 
 console.log("FalconPanel Loaded Successfully");
