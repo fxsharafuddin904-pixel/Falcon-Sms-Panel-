@@ -1,232 +1,1026 @@
-// =========================
-// Elements
-// =========================
+/* ========================================= */
+/* FALCONPANEL SCRIPT.JS */
+/* PART 1/4 */
+/* ========================================= */
 
-const welcomePage = document.getElementById("welcomePage");
-const loginPage = document.getElementById("loginPage");
-const servicePage = document.getElementById("servicePage");
-const finalPage = document.getElementById("finalPage");
 
-const startBtn = document.getElementById("startBtn");
-const loginBtn = document.getElementById("loginBtn");
-const backWelcomeBtn = document.getElementById("backWelcomeBtn");
-const getNumberBtn = document.getElementById("getNumberBtn");
-const backLoginBtn = document.getElementById("backLoginBtn");
+/* ========================= */
+/* PAGE CONTROL */
+/* ========================= */
 
-const gmail = document.getElementById("gmail");
-const password = document.getElementById("password");
 
-const gmailError = document.getElementById("gmailError");
-const passwordError = document.getElementById("passwordError");
+function showPage(pageId){
 
-const platform = document.getElementById("platform");
-const country = document.getElementById("country");
+    let pages = document.querySelectorAll(".page");
 
-const platformError = document.getElementById("platformError");
-const countryError = document.getElementById("countryError");
+    pages.forEach(page=>{
 
-const sadMusic = document.getElementById("sadMusic");
-const musicToggleBtn = document.getElementById("musicToggleBtn");
-
-// =========================
-// Show Page
-// =========================
-
-function showPage(page){
-
-    document.querySelectorAll(".page").forEach(p=>{
-
-        p.classList.remove("active");
+        page.classList.remove("active");
 
     });
 
-    page.classList.add("active");
 
-}
+    let target = document.getElementById(pageId);
 
-// =========================
-// Welcome
-// =========================
 
-startBtn.addEventListener("click",()=>{
+    if(target){
 
-    showPage(loginPage);
+        target.classList.add("active");
 
-});
+    }
 
-// =========================
-// Back Buttons
-// =========================
 
-backWelcomeBtn.addEventListener("click",()=>{
+    window.scrollTo({
 
-    showPage(welcomePage);
+        top:0,
 
-});
-
-backLoginBtn.addEventListener("click",()=>{
-
-    showPage(loginPage);
-
-});
-
-// =========================
-// Clear Errors
-// =========================
-
-function clearErrors(){
-
-    gmailError.textContent="";
-
-    passwordError.textContent="";
-
-    platformError.textContent="";
-
-    countryError.textContent="";
-
-    document
-    .querySelectorAll("input,select")
-    .forEach(item=>{
-
-        item.classList.remove("shake");
+        behavior:"smooth"
 
     });
 
 }
-// =========================
-// Login Validation
-// =========================
 
-loginBtn.addEventListener("click", () => {
 
-    clearErrors();
+
+/* ========================= */
+/* WELCOME PAGE */
+/* ========================= */
+
+
+function startPanel(){
+
+
+    showPage("loginPage");
+
+
+}
+
+
+
+/* ========================= */
+/* BACK BUTTON */
+/* ========================= */
+
+
+function goBack(page){
+
+
+    showPage(page);
+
+
+}
+
+
+
+/* ========================= */
+/* LOGIN SYSTEM */
+/* ========================= */
+
+
+const validEmail = "falconpanel@gmail.com";
+
+
+const validPassword = "1234";
+
+
+
+function login(){
+
+
+
+    let emailInput = document.getElementById("email");
+
+
+    let passwordInput = document.getElementById("password");
+
+
+
+    let emailError = document.getElementById("emailError");
+
+
+    let passwordError = document.getElementById("passwordError");
+
+
+
+    let email = emailInput.value.trim();
+
+
+
+    let password = passwordInput.value.trim();
+
+
+
+
+    // Reset Error
+
+
+    emailError.innerHTML = "";
+
+
+    passwordError.innerHTML = "";
+
+
+
+
+    let success = true;
+
+
+
+
+    /* Gmail Check */
+
+
+    if(email !== validEmail){
+
+
+        emailError.innerHTML =
+        "Invalid Business Gmail";
+
+
+        success = false;
+
+
+    }
+
+
+
+
+    /* Password Check */
+
+
+    if(password !== validPassword){
+
+
+        passwordError.innerHTML =
+        "Invalid Password";
+
+
+        success = false;
+
+
+    }
+
+
+
+
+
+    if(success){
+
+
+        showPage("servicePage");
+
+
+    }
+
+
+
+}
+/* ========================================= */
+/* SERVICE SELECT SYSTEM */
+/* PART 2/4 */
+/* ========================================= */
+
+
+
+/* ========================= */
+/* GET NUMBER BUTTON */
+/* ========================= */
+
+
+function getNumber(){
+
+
+
+    let platform =
+    document.getElementById("platform");
+
+
+
+    let country =
+    document.getElementById("country");
+
+
+
+    let platformError =
+    document.getElementById("platformError");
+
+
+
+    let countryError =
+    document.getElementById("countryError");
+
+
+
+
+    let selectedPlatform =
+    platform.value;
+
+
+
+    let selectedCountry =
+    country.value;
+
+
+
+
+    // Clear Error
+
+
+    platformError.innerHTML = "";
+
+
+    countryError.innerHTML = "";
+
+
 
     let valid = true;
 
-    if (gmail.value.trim() !== "falconpanel@gmail.com") {
 
-        gmailError.textContent = "Invalid Business Gmail";
 
-        gmail.classList.add("shake");
 
-        valid = false;
-    }
 
-    if (password.value !== "1234") {
+    /* Platform Validation */
 
-        passwordError.textContent = "Invalid Password";
 
-        password.classList.add("shake");
+    if(selectedPlatform === ""){
 
-        valid = false;
-    }
 
-    if (valid) {
+        platformError.innerHTML =
+        "Please select a platform";
 
-        showPage(servicePage);
-
-    }
-
-});
-
-// =========================
-// Service Validation
-// =========================
-
-getNumberBtn.addEventListener("click", () => {
-
-    clearErrors();
-
-    let valid = true;
-
-    if (platform.value === "") {
-
-        platformError.textContent = "Please select a platform";
-
-        platform.classList.add("shake");
 
         valid = false;
+
+
     }
 
-    if (country.value === "") {
 
-        countryError.textContent = "Please select a country";
 
-        country.classList.add("shake");
+
+
+    /* Country Validation */
+
+
+    if(selectedCountry === ""){
+
+
+        countryError.innerHTML =
+        "Please select a country";
+
 
         valid = false;
-    }
 
-    if (valid) {
-
-        showPage(finalPage);
-
-        sadMusic.volume = 0.7;
-
-        sadMusic.play().catch(() => {});
 
     }
+
+
+
+
+
+    if(valid){
+
+
+        openFinalPage();
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+/* ========================= */
+/* FINAL PAGE OPEN */
+/* ========================= */
+
+
+
+function openFinalPage(){
+
+
+    showPage("finalPage");
+
+
+
+    playSadMusic();
+
+
+
+}
+
+
+
+
+
+
+/* ========================= */
+/* MUSIC SYSTEM */
+/* ========================= */
+
+
+
+let music;
+
+
+
+let musicPlaying = false;
+
+
+
+
+
+function playSadMusic(){
+
+
+
+    music =
+    document.getElementById("sadMusic");
+
+
+
+    if(music){
+
+
+
+        music.volume = 0.5;
+
+
+
+        music.play()
+        .then(()=>{
+
+
+            musicPlaying = true;
+
+
+
+        })
+
+        .catch(()=>{
+
+
+            console.log(
+            "Music waiting for user interaction"
+            );
+
+
+        });
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+/* ========================= */
+/* MUSIC BUTTON */
+/* ========================= */
+
+
+function toggleMusic(){
+
+
+
+    if(!music){
+
+
+        music =
+        document.getElementById("sadMusic");
+
+
+    }
+
+
+
+
+    if(musicPlaying){
+
+
+
+        music.pause();
+
+
+
+        musicPlaying = false;
+
+
+
+    }
+
+
+    else{
+
+
+
+        music.play();
+
+
+
+        musicPlaying = true;
+
+
+
+    }
+
+
+
+        }
+/* ========================================= */
+/* EXTRA CONTROLS & EVENTS */
+/* PART 3/4 */
+/* ========================================= */
+
+
+
+/* ========================= */
+/* KEEP MUSIC BUTTON TEXT */
+/* ========================= */
+
+
+function updateMusicButton(){
+
+
+
+    let btn =
+    document.getElementById("musicBtn");
+
+
+
+    if(btn){
+
+
+
+        btn.innerHTML =
+        "🔇 Music OFF";
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+/* ========================= */
+/* PAGE LOAD SETUP */
+/* ========================= */
+
+
+window.addEventListener(
+"load",
+function(){
+
+
+
+    updateMusicButton();
+
+
+
+    let password =
+    document.getElementById("password");
+
+
+
+    if(password){
+
+
+
+        password.value =
+        "1234";
+
+
+
+        password.readOnly =
+        true;
+
+
+
+    }
+
+
 
 });
 
-// =========================
-// Music Toggle
-// =========================
 
-let musicPlaying = true;
 
-musicToggleBtn.addEventListener("click", () => {
 
-    if (musicPlaying) {
 
-        sadMusic.pause();
 
-    } else {
+/* ========================= */
+/* ENTER KEY LOGIN */
+/* ========================= */
 
-        sadMusic.play().catch(() => {});
 
-    }
 
-    musicPlaying = !musicPlaying;
+document.addEventListener(
+"keydown",
+function(event){
 
-});
 
-// =========================
-// Enter Key Support
-// =========================
 
-gmail.addEventListener("keydown", (e) => {
+    let loginPage =
+    document.getElementById("loginPage");
 
-    if (e.key === "Enter") {
 
-        loginBtn.click();
 
-    }
+    if(
+    event.key === "Enter" &&
+    loginPage &&
+    loginPage.classList.contains("active")
+    ){
 
-});
 
-platform.addEventListener("keydown", (e) => {
 
-    if (e.key === "Enter") {
+        login();
 
-        getNumberBtn.click();
+
 
     }
 
+
+
 });
 
-country.addEventListener("keydown", (e) => {
 
-    if (e.key === "Enter") {
 
-        getNumberBtn.click();
+
+
+
+
+/* ========================= */
+/* INPUT ERROR REMOVE */
+/* ========================= */
+
+
+
+function clearError(id){
+
+
+
+    let error =
+    document.getElementById(id);
+
+
+
+    if(error){
+
+
+        error.innerHTML = "";
+
 
     }
 
+
+
+}
+
+
+
+
+
+
+/* ========================= */
+/* INPUT LISTENER */
+/* ========================= */
+
+
+
+window.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+
+    let inputs =
+    document.querySelectorAll(
+    "input,select"
+    );
+
+
+
+    inputs.forEach(
+    function(input){
+
+
+
+        input.addEventListener(
+        "input",
+        function(){
+
+
+
+            if(this.id === "email"){
+
+
+                clearError(
+                "emailError"
+                );
+
+
+            }
+
+
+
+            if(this.id === "platform"){
+
+
+                clearError(
+                "platformError"
+                );
+
+
+            }
+
+
+
+            if(this.id === "country"){
+
+
+                clearError(
+                "countryError"
+                );
+
+
+            }
+
+
+
+        });
+
+
+
+    });
+
+
+
 });
 
-// =========================
-// Initial Page
-// =========================
 
-showPage(welcomePage);
+
+
+
+
+
+/* ========================= */
+/* BUTTON RIPPLE EFFECT */
+/* ========================= */
+
+
+
+document.addEventListener(
+"click",
+function(e){
+
+
+
+    let button =
+    e.target.closest("button");
+
+
+
+    if(!button) return;
+
+
+
+    let ripple =
+    document.createElement("span");
+
+
+
+    ripple.className =
+    "ripple";
+
+
+
+    button.appendChild(ripple);
+
+
+
+
+    setTimeout(
+    function(){
+
+
+        ripple.remove();
+
+
+
+    },
+    500
+    );
+
+
+
+});
+/* ========================================= */
+/* FINAL SETTINGS & SECURITY */
+/* PART 4/4 */
+/* ========================================= */
+
+
+
+/* ========================= */
+/* MUSIC SETTINGS */
+/* ========================= */
+
+
+function setupMusic(){
+
+
+
+    music =
+    document.getElementById("sadMusic");
+
+
+
+    if(music){
+
+
+
+        music.loop = true;
+
+
+        music.volume = 0.5;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* ========================= */
+/* FINAL PAGE MUSIC START */
+/* ========================= */
+
+
+
+function finalMusicStart(){
+
+
+
+    if(!music){
+
+
+
+        setupMusic();
+
+
+
+    }
+
+
+
+
+    if(music){
+
+
+
+        music.play()
+        .then(function(){
+
+
+
+            musicPlaying = true;
+
+
+
+        })
+
+        .catch(function(){
+
+
+
+            console.log(
+            "Browser blocked autoplay"
+            );
+
+
+        });
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+/* ========================= */
+/* CHECK FINAL PAGE */
+/* ========================= */
+
+
+
+function checkFinalPage(){
+
+
+
+    let finalPage =
+    document.getElementById("finalPage");
+
+
+
+    if(
+    finalPage &&
+    finalPage.classList.contains("active")
+    ){
+
+
+
+        finalMusicStart();
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* ========================= */
+/* OVERRIDE PAGE SWITCH */
+/* ========================= */
+
+
+let oldShowPage = showPage;
+
+
+
+showPage = function(pageId){
+
+
+
+    oldShowPage(pageId);
+
+
+
+
+    if(pageId === "finalPage"){
+
+
+
+        setTimeout(
+        function(){
+
+
+            finalMusicStart();
+
+
+
+        },
+        300
+        );
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+/* ========================= */
+/* INITIALIZE APP */
+/* ========================= */
+
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+
+    setupMusic();
+
+
+
+    updateMusicButton();
+
+
+
+});
+
+
+
+
+
+
+
+/* ========================= */
+/* PREVENT PASSWORD CHANGE */
+/* ========================= */
+
+
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+
+    let pass =
+    document.getElementById("password");
+
+
+
+    if(pass){
+
+
+
+        pass.addEventListener(
+        "keydown",
+        function(e){
+
+
+
+            e.preventDefault();
+
+
+
+        });
+
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+/* ========================= */
+/* EXPORT FUNCTIONS */
+/* ========================= */
+
+
+window.startPanel =
+startPanel;
+
+
+window.login =
+login;
+
+
+window.getNumber =
+getNumber;
+
+
+window.goBack =
+goBack;
+
+
+window.toggleMusic =
+toggleMusic;
+
+
+/* ========================================= */
+/* END OF FALCONPANEL SCRIPT.JS */
+/* ========================================= */
