@@ -8,80 +8,28 @@
 
 <title>Birthday Surprise ❤️</title>
 
+
+<!-- Part 2 CSS এখানে যাবে -->
+
+
 </head>
 
 
 <body>
 
 
-<!-- COUNTDOWN PAGE -->
 
-<div id="countdownPage">
-
-
-<h1>🎂 Birthday Surprise</h1>
-
-
-<h2>🇧🇩 Dhaka Time</h2>
-
-<h3 id="clock">
-00:00:00
-</h3>
-
-
-<h2>আর মাত্র...</h2>
-
-
-<div id="timer">
-
-<span id="days">00</span> দিন
-
-<span id="hours">00</span> :
-
-<span id="minutes">00</span> :
-
-<span id="seconds">00</span>
-
-</div>
-
-
-
-<p>
-
-অপেক্ষা করো...<br>
-
-আজ রাত ৮:২৮ PM এ একটি বিশেষ বার্তা খুলবে। ❤️
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<!-- MAIN STORY PAGE -->
-
-
-<div id="mainPage" style="display:none;">
-
-
+<!-- MUSIC BUTTON -->
 
 <button id="musicBtn">
-
 🎵 Music চালু করুন
-
 </button>
 
 
 
 <audio id="music" loop>
 
-<source src="music.mp3">
+<source src="music.mp3" type="audio/mpeg">
 
 </audio>
 
@@ -89,19 +37,35 @@
 
 
 
-<div id="story">
+<!-- STORY WEBSITE -->
+
+
+<div id="mainPage">
 
 
 
-<div class="step active">
+<div class="story card">
 
 
-<h1>🌙 শুরু</h1>
+
+
+
+
+<!-- STEP 1 -->
+
+<section class="step active">
+
+
+<h1>
+🌙 শুরু
+</h1>
 
 
 <p>
 
-আজ অনেক কিছু বলার আছে... জানি, তুমি হয়তো আজ আর আমার জীবনের অংশ নও। তবুও আজকের দিনটা তোমার... তাই কিছু কথা বলতে চাই। 🌸
+আজ অনেক কিছু বলার আছে... জানি, তুমি হয়তো আজ আর আমার জীবনের অংশ নও।  
+
+তবুও আজকের দিনটা তোমার... তাই কিছু কথা বলতে চাই। 🌸
 
 </p>
 
@@ -113,19 +77,32 @@
 </button>
 
 
-</div>
+</section>
 
 
 
 
-<div class="step">
 
 
-<h1>💭 স্মৃতি</h1>
+
+<!-- STEP 2 -->
+
+
+<section class="step">
+
+
+<h1>
+💭 স্মৃতি
+</h1>
+
 
 <p>
 
-এক সময় প্রতিদিন কথা হতো... হাসি ছিল... অভিমান ছিল... আজ সেগুলো শুধু স্মৃতি। কিন্তু স্মৃতিগুলো আজও মিথ্যা নয়। 💙
+এক সময় প্রতিদিন কথা হতো... হাসি ছিল... অভিমান ছিল...
+
+আজ সেগুলো শুধু স্মৃতি।
+
+কিন্তু স্মৃতিগুলো আজও মিথ্যা নয়। 💙
 
 </p>
 
@@ -137,20 +114,31 @@
 </button>
 
 
-</div>
+</section>
 
 
 
 
 
-<div class="step">
 
 
-<h1>🌧️ সত্যি কথা</h1>
+
+<!-- STEP 3 -->
+
+
+<section class="step">
+
+
+<h1>
+🌧️ সত্যি কথা
+</h1>
+
 
 <p>
 
-তুমি চলে গেছো... হয়তো সেটাই তোমার ভালো থাকার পথ ছিল। আমি আটকাইনি... কারণ ভালোবাসা কখনো জোর করে ধরে রাখা যায় না। 🌙
+তুমি চলে গেছো... হয়তো সেটাই তোমার ভালো থাকার পথ ছিল।
+
+আমি আটকাইনি... কারণ ভালোবাসা কখনো জোর করে ধরে রাখা যায় না। 🌙
 
 </p>
 
@@ -162,39 +150,59 @@
 </button>
 
 
-</div>
+</section>
 
 
 
 
 
-<div class="step">
 
 
-<h1>🎉 শুভ জন্মদিন</h1>
+
+<!-- STEP 4 -->
+
+
+<section class="step">
+
+
+<h1>
+🎉 শুভ জন্মদিন
+</h1>
 
 
 <p>
+
 
 শুভ জন্মদিন! 🎂🎉
 
 <br><br>
 
+
 আল্লাহ যেন তোমার প্রতিটি স্বপ্ন পূরণ করেন।
 
 <br><br>
+
 
 তুমি সবসময় ভালো থেকো।
 
 <br><br>
 
+
 তোমার মুখের হাসি যেন কখনো হারিয়ে না যায়।
 
 <br><br>
 
+
+আমি তোমার জীবনে না থাকলেও, আমার দোয়া সবসময় থাকবে।
+
+<br><br>
+
+
 ভালো থেকো... শুভ জন্মদিন। ❤️
 
+
 </p>
+
 
 
 <button onclick="nextStep()">
@@ -204,16 +212,25 @@
 </button>
 
 
-</div>
+</section>
 
 
 
 
 
-<div class="step">
 
 
-<h1>🌌 শেষ</h1>
+
+
+<!-- STEP 5 -->
+
+
+<section class="step">
+
+
+<h1>
+🌌 শেষ
+</h1>
 
 
 <p>
@@ -226,33 +243,41 @@
 
 <br><br>
 
+ভালো থেকো।
+
+<br><br>
+
 বিদায়... 🌙❤️
 
 </p>
 
 
+
 <h3>
-
 Made with ❤️
-
 </h3>
 
 
+</section>
+
+
+
+
+
+
+
+</div>
+
+
 </div>
 
 
 
 
-</div>
-
-
-</div>
 
 
 
-
-
-<!-- Part 2 CSS + Part 3 JS এখানে বসবে -->
+<!-- Part 3 JavaScript এখানে যাবে -->
 
 
 </body>
@@ -260,134 +285,112 @@ Made with ❤️
 </html>
 <style>
 
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 
 *{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 
 
 body{
 
-min-height:100vh;
-background:
-radial-gradient(circle at top,#14213d,#020617 60%);
+    min-height:100vh;
+    background:
+    linear-gradient(135deg,#020617,#0f172a,#172554);
 
-color:white;
-
-overflow:hidden;
+    color:white;
+    overflow:hidden;
 
 }
 
 
 
-/* Countdown */
+/* Main Page */
 
 
-#countdownPage,
 #mainPage{
 
-width:100%;
-height:100vh;
+    width:100%;
+    height:100vh;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
 }
 
+
+
+/* Glass Card */
 
 
 .card{
 
-width:90%;
-max-width:420px;
+    width:90%;
+    max-width:450px;
 
-padding:35px 25px;
+    padding:35px 25px;
 
-background:
-rgba(255,255,255,0.08);
+    background:
+    rgba(255,255,255,0.10);
 
-border-radius:25px;
+    border-radius:25px;
 
-backdrop-filter:blur(20px);
+    backdrop-filter:blur(15px);
 
-border:1px solid rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.15);
 
-box-shadow:
-0 0 40px rgba(0,0,0,0.5);
+    box-shadow:
+    0 0 40px rgba(0,0,0,0.5);
 
-text-align:center;
-
-animation:fade 1.5s ease;
-
+    text-align:center;
 
 }
+
 
 
 
 
 h1{
 
-font-size:30px;
-margin-bottom:20px;
+    font-size:30px;
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 15px #60a5fa;
 
 }
 
-
-h2{
-
-margin:15px 0;
-
-color:#cbd5e1;
-
-}
-
-
-
-#clock{
-
-font-size:35px;
-
-letter-spacing:3px;
-
-color:#60a5fa;
-
-}
-
-
-
-#timer{
-
-font-size:32px;
-
-font-weight:bold;
-
-margin:20px 0;
-
-color:#fff;
-
-}
 
 
 
 p{
 
-font-size:16px;
+    font-size:16px;
 
-line-height:1.8;
+    line-height:1.9;
 
-color:#e2e8f0;
+    color:#e5e7eb;
 
 }
+
+
+
+
+h3{
+
+    margin-top:25px;
+
+    color:#f9a8d4;
+
+}
+
+
 
 
 
@@ -397,25 +400,24 @@ color:#e2e8f0;
 
 button{
 
+    margin-top:25px;
 
-margin-top:25px;
+    padding:13px 30px;
 
-padding:13px 28px;
+    border:none;
 
-border:none;
+    border-radius:50px;
 
-border-radius:30px;
+    background:
+    linear-gradient(45deg,#2563eb,#9333ea);
 
-background:
-linear-gradient(135deg,#3b82f6,#8b5cf6);
+    color:white;
 
-color:white;
+    font-size:16px;
 
-font-size:16px;
+    cursor:pointer;
 
-cursor:pointer;
-
-transition:.3s;
+    transition:.4s;
 
 }
 
@@ -423,40 +425,10 @@ transition:.3s;
 
 button:hover{
 
-transform:scale(1.08);
+    transform:scale(1.08);
 
-box-shadow:
-0 0 25px #3b82f6;
-
-}
-
-
-
-
-/* Story */
-
-
-#story{
-
-position:relative;
-
-}
-
-
-
-.step{
-
-display:none;
-
-animation:fade 1s ease;
-
-}
-
-
-
-.step.active{
-
-display:block;
+    box-shadow:
+    0 0 25px #60a5fa;
 
 }
 
@@ -468,45 +440,98 @@ display:block;
 
 #musicBtn{
 
-position:fixed;
+    position:fixed;
 
-top:20px;
+    top:20px;
 
-right:20px;
+    right:20px;
 
-z-index:10;
+    z-index:10;
 
 }
 
 
 
-/* Floating hearts */
+
+
+/* Steps */
+
+
+.step{
+
+    display:none;
+
+    animation:show 1s ease;
+
+}
+
+
+
+.step.active{
+
+    display:block;
+
+}
+
+
+
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+
+
+
+/* Floating Hearts */
 
 
 body::before{
 
-content:"❤️ ✨ ❤️ ✨";
+content:"❤️ ✨ ❤️ ✨ ❤️";
 
 position:absolute;
 
-font-size:40px;
+bottom:-50px;
 
-opacity:.2;
+left:20%;
 
-animation:float 10s infinite linear;
+font-size:35px;
+
+opacity:.25;
+
+animation:heart 12s linear infinite;
 
 }
 
 
 
-
-
-@keyframes float{
+@keyframes heart{
 
 
 0%{
 
-transform:translateY(100vh);
+transform:translateY(0);
 
 }
 
@@ -523,39 +548,14 @@ transform:translateY(-120vh);
 
 
 
-@keyframes fade{
 
 
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
-
-/* Stars */
+/* Falling Stars */
 
 
 body::after{
 
-content:"✦  ✧  ✦  ✧  ✦";
+content:"✦     ✧       ✦       ✧";
 
 position:absolute;
 
@@ -563,35 +563,36 @@ top:10%;
 
 left:10%;
 
-font-size:50px;
-
-color:white;
+font-size:45px;
 
 opacity:.25;
 
-animation:twinkle 3s infinite alternate;
+animation:stars 3s infinite alternate;
 
 }
 
 
 
-@keyframes twinkle{
+@keyframes stars{
 
 from{
 
-opacity:.1;
+opacity:.15;
 
 }
 
 
 to{
 
-opacity:.5;
+opacity:.6;
 
 }
 
 
 }
+
+
+
 
 
 
@@ -606,16 +607,16 @@ padding:25px 18px;
 }
 
 
-#timer{
+h1{
 
 font-size:25px;
 
 }
 
 
-h1{
+p{
 
-font-size:25px;
+font-size:15px;
 
 }
 
@@ -629,229 +630,32 @@ font-size:25px;
 <script>
 
 
-// ============================
-// SETTINGS
-// ============================
+// =====================
+// STEP CHANGE SYSTEM
+// =====================
 
 
-// Target time: Dhaka Bangladesh
-const targetTime = new Date(
-"2026-07-29T20:28:00+06:00"
-).getTime();
+let currentStep = 0;
 
 
-
-const countdownPage =
-document.getElementById("countdownPage");
-
-
-const mainPage =
-document.getElementById("mainPage");
-
-
-
-
-
-
-// ============================
-// CHECK FINISHED
-// ============================
-
-
-if(localStorage.getItem("birthdayOpened") === "yes"){
-
-countdownPage.style.display="none";
-
-mainPage.style.display="flex";
-
-
-}
-
-
-
-
-
-
-
-// ============================
-// LIVE DHAKA CLOCK
-// ============================
-
-
-function dhakaClock(){
-
-
-let now =
-new Date();
-
-
-let time =
-now.toLocaleTimeString(
-"en-BD",
-{
-timeZone:"Asia/Dhaka",
-hour12:false
-}
-);
-
-
-document.getElementById("clock").innerHTML=time;
-
-
-}
-
-
-setInterval(dhakaClock,1000);
-
-dhakaClock();
-
-
-
-
-
-
-
-// ============================
-// COUNTDOWN
-// ============================
-
-
-function countdown(){
-
-
-let now =
-new Date().getTime();
-
-
-let distance =
-targetTime - now;
-
-
-
-if(distance <= 0){
-
-
-
-localStorage.setItem(
-"birthdayOpened",
-"yes"
-);
-
-
-
-countdownPage.style.display="none";
-
-mainPage.style.display="flex";
-
-return;
-
-
-}
-
-
-
-
-let days =
-Math.floor(
-distance/(1000*60*60*24)
-);
-
-
-
-let hours =
-Math.floor(
-(distance%(1000*60*60*24))
-/
-(1000*60*60)
-);
-
-
-
-let minutes =
-Math.floor(
-(distance%(1000*60*60))
-/
-(1000*60)
-);
-
-
-
-let seconds =
-Math.floor(
-(distance%(1000*60))
-/
-1000
-);
-
-
-
-
-document.getElementById("days").innerHTML=
-String(days).padStart(2,"0");
-
-
-document.getElementById("hours").innerHTML=
-String(hours).padStart(2,"0");
-
-
-document.getElementById("minutes").innerHTML=
-String(minutes).padStart(2,"0");
-
-
-document.getElementById("seconds").innerHTML=
-String(seconds).padStart(2,"0");
-
-
-
-}
-
-
-
-
-setInterval(countdown,1000);
-
-countdown();
-
-
-
-
-
-
-
-
-// ============================
-// NEXT STEP
-// ============================
-
-
-let currentStep=0;
-
-
-const steps =
-document.querySelectorAll(".step");
+const steps = document.querySelectorAll(".step");
 
 
 
 function nextStep(){
 
 
-steps[currentStep]
-.classList.remove("active");
+    steps[currentStep].classList.remove("active");
 
 
-currentStep++;
+    currentStep++;
 
 
+    if(currentStep < steps.length){
 
-if(currentStep < steps.length){
+        steps[currentStep].classList.add("active");
 
-
-steps[currentStep]
-.classList.add("active");
-
-
-}
-
+    }
 
 
 }
@@ -861,33 +665,80 @@ steps[currentStep]
 
 
 
+// =====================
+// MUSIC SYSTEM
+// =====================
 
 
-// ============================
-// MUSIC BUTTON
-// ============================
+const music = document.getElementById("music");
 
-
-const music =
-document.getElementById("music");
-
-
-const musicBtn =
-document.getElementById("musicBtn");
+const musicBtn = document.getElementById("musicBtn");
 
 
 
-musicBtn.onclick=function(){
+musicBtn.addEventListener("click",function(){
 
 
-music.play();
+    music.play();
 
 
-musicBtn.innerHTML=
-"🎵 Music চলছে";
+    musicBtn.innerHTML =
+    "🎵 Music চলছে";
 
 
-};
+});
+
+
+
+
+
+
+
+// =====================
+// TYPING EFFECT
+// =====================
+
+
+const firstText =
+document.querySelector(".step.active p");
+
+
+let text =
+firstText.innerHTML;
+
+
+firstText.innerHTML="";
+
+
+let index=0;
+
+
+
+function typing(){
+
+
+if(index < text.length){
+
+
+firstText.innerHTML += text.charAt(index);
+
+
+index++;
+
+
+setTimeout(typing,40);
+
+
+}
+
+
+}
+
+
+
+typing();
+
+
 
 
 
