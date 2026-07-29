@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FalconPanel - Virtual Numbers</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="bg-glow glow-one"></div>
+<div class="bg-glow glow-two"></div>
+<div class="bg-glow glow-three"></div>
+
+<!-- ===========================
+WELCOME PAGE
+=========================== -->
+
+<section id="welcomePage" class="page active">
+
+<div class="welcome-card">
+
+<div class="brand">
+
+<div class="brand-icon">🌐</div>
+
+<div>
+
+<div class="brand-name">
+FalconPanel
+</div>
+
+<div class="brand-subtitle">
+Premium Virtual Number Service
+</div>
+
+</div>
+
+</div>
+
+<div class="welcome-content">
+
+<div class="welcome-badge">
+WELCOME
+</div>
+
+<h1>
+
+Get Virtual Numbers
+
+<span>
+
+For Every Country
+
+</span>
+
+</h1>
+
+<p class="welcome-description">
+
+Here you can access virtual numbers from multiple countries.
+
+Receive SMS easily with premium quality numbers.
+
+</p>
+
+<div class="feature-row">
+
+<div class="feature">
+
+<span>🌍</span>
+
+<strong>All Countries</strong>
+
+<small>Available</small>
+
+</div>
+
+<div class="feature">
+
+<span>💲</span>
+
+<strong>$0.013</strong>
+
+<small>Per SMS Cost</small>
+
+</div>
+
+<div class="feature">
+
+<span>⚡</span>
+
+<strong>Fast Access</strong>
+
+<small>Premium Service</small>
+
+</div>
+
+</div>
+
+<button class="primary-btn" onclick="showLoginPage()">
+
+Get Started
+
+<span class="btn-arrow">
+
+→
+
+</span>
+
+</button>
+
+<div class="secure-note">
+
+Premium Worldwide SMS Service
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+LOGIN PAGE
+=========================== -->
+
+<section id="loginPage" class="page">
+
+<div class="app-card">
+
+<div class="section-heading">
+
+<div class="mini-label">
+
+TEST ACCOUNT
+
+</div>
+
+<h2>
+
+Login Required
+
+</h2>
+
+<p>
+
+Please login using the official FalconPanel business account to continue.
+
+</p>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Business Gmail
+
+</label>
+
+<input
+type="email"
+id="gmail"
+placeholder="Enter Gmail">
+
+<div class="error" id="gmailError"></div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Password
+
+</label>
+
+<input
+type="password"
+id="password"
+placeholder="Click Here">
+
+<div class="error" id="passwordError"></div>
+
+</div>
+
+<button
+class="primary-btn pulse-btn"
+onclick="loginNow()">
+
+Login
+
+</button>
+
+<button
+class="back-btn"
+onclick="showWelcomePage()">
+
+← Back
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ===========================
+MAIN PAGE
+=========================== -->
+
+<section id="mainPage" class="page">
+
+<div class="app-card">
+
+<div class="section-heading">
+
+<div class="mini-label">
+
+GET NUMBER
+
+</div>
+
+<h2>
+
+Choose Platform & Country
+
+</h2>
+
+<p>
+
+Select your preferred platform and country before requesting a virtual number.
+
+</p>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Select Platform
+
+</label>
+
+<select id="platform">
+
+<option value="">
+
+Choose Platform
+
+</option>
+
+<option>
+
+Telegram
+
+</option>
+
+<option>
+
+WhatsApp
+
+</option>
+
+<option>
+
+TikTok
+
+</option>
+
+<option>
+
+Imo
+
+</option>
+
+</select>
+
+<div class="error" id="platformError"></div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Country
+
+</label>
+
+<select id="country">
+
+<option value="">
+
+Select Country
+
+</option>
+
+<option>
+
+Bangladesh
+
+</option>
+
+<option>
+
+Syria
+
+</option>
+
+<option>
+
+Lebanon
+
+</option>
+
+<option>
+
+Morocco
+
+</option>
+
+<option>
+
+Egypt
+
+</option>
+
+<option>
+
+Saudi Arabia
+
+</option>
+
+</select>
+
+<div class="error" id="countryError"></div>
+
+</div>
+
+<button
+class="primary-btn"
+onclick="getNumber()">
+
+Get Number
+
+</button>
+
+<button
+class="back-btn"
+onclick="showLoginPage()">
+
+← Back
+
+</button>
+
+</div>
+
+</section>
+
+<audio id="music" src="music.mp3"></audio>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
