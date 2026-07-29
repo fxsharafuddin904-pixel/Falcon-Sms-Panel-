@@ -4,562 +4,185 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Birthday Surprise ❤️</title>
+<title>Happy Birthday ❤️</title>
 
-
-<style>
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-
-*{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-
-}
-
-
-
-body{
-
-min-height:100vh;
-
-background:
-linear-gradient(135deg,#020617,#0f172a,#172554);
-
-color:white;
-
-overflow:hidden;
-
-}
-
-
-
-
-
-/* Main Area */
-
-
-#mainPage{
-
-width:100%;
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-
-
-
-
-
-/* Glass Card */
-
-
-.card{
-
-
-width:90%;
-
-max-width:450px;
-
-
-padding:35px 25px;
-
-
-background:
-rgba(255,255,255,0.10);
-
-
-border-radius:25px;
-
-
-backdrop-filter:blur(15px);
-
-
-border:1px solid rgba(255,255,255,0.15);
-
-
-box-shadow:
-0 0 40px rgba(0,0,0,.5);
-
-
-text-align:center;
-
-
-}
-
-
-
-
-
-h1{
-
-
-font-size:30px;
-
-margin-bottom:20px;
-
-
-text-shadow:
-0 0 15px #60a5fa;
-
-
-}
-
-
-
-
-p{
-
-
-font-size:16px;
-
-line-height:1.9;
-
-color:#e5e7eb;
-
-
-}
-
-
-
-
-
-h3{
-
-
-margin-top:25px;
-
-color:#f9a8d4;
-
-
-}
-
-
-
-
-
-/* Buttons */
-
-
-button{
-
-
-margin-top:25px;
-
-
-padding:13px 30px;
-
-
-border:none;
-
-
-border-radius:50px;
-
-
-background:
-linear-gradient(45deg,#2563eb,#9333ea);
-
-
-color:white;
-
-
-font-size:16px;
-
-
-cursor:pointer;
-
-
-transition:.4s;
-
-
-}
-
-
-
-button:hover{
-
-
-transform:scale(1.08);
-
-
-box-shadow:
-0 0 25px #60a5fa;
-
-
-}
-
-
-
-
-
-/* Music Button */
-
-
-#musicBtn{
-
-
-position:fixed;
-
-
-top:20px;
-
-
-right:20px;
-
-
-z-index:10;
-
-
-}
-
-
-
-
-
-
-/* Steps */
-
-
-.step{
-
-
-display:none;
-
-
-animation:fade 1s ease;
-
-
-}
-
-
-
-.step.active{
-
-
-display:block;
-
-
-}
-
-
-
-
-
-@keyframes fade{
-
-
-from{
-
-
-opacity:0;
-
-transform:translateY(40px);
-
-
-}
-
-
-to{
-
-
-opacity:1;
-
-transform:translateY(0);
-
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* Floating Hearts */
-
-
-body::before{
-
-
-content:"❤️ ✨ ❤️ ✨ ❤️";
-
-
-position:absolute;
-
-
-bottom:-60px;
-
-
-left:20%;
-
-
-font-size:40px;
-
-
-opacity:.25;
-
-
-animation:float 12s linear infinite;
-
-
-}
-
-
-
-@keyframes float{
-
-
-0%{
-
-transform:translateY(0);
-
-}
-
-
-100%{
-
-transform:translateY(-120vh);
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* Stars */
-
-
-body::after{
-
-
-content:"✦  ✧  ✦  ✧  ✦";
-
-
-position:absolute;
-
-
-top:15%;
-
-
-left:10%;
-
-
-font-size:50px;
-
-
-opacity:.3;
-
-
-animation:blink 3s infinite alternate;
-
-
-}
-
-
-
-@keyframes blink{
-
-
-from{
-
-opacity:.2;
-
-}
-
-
-to{
-
-opacity:.7;
-
-}
-
-
-}
-
-
-
-
-
-
-@media(max-width:500px){
-
-
-.card{
-
-padding:25px 18px;
-
-}
-
-
-h1{
-
-font-size:25px;
-
-}
-
-
-p{
-
-font-size:15px;
-
-}
-
-
-}
-
-
-    </style>
-
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<!-- Background Music -->
+<audio id="bgMusic" loop autoplay>
 
+    <source src="music.mp3" type="audio/mpeg">
 
-<!-- Music Button -->
-
-<button id="musicBtn">
-🎵 Music চালু করুন
-</button>
-
-
-<audio id="music" loop>
-<source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- Rain -->
+<div class="rain"></div>
 
+<!-- Floating Hearts -->
+<div class="hearts"></div>
 
+<div class="container">
 
+<!-- =========================
+COUNTDOWN PAGE
+========================= -->
 
-<!-- Main Story -->
+<section id="countdownPage" class="page active">
 
-<div id="mainPage">
+<div class="glass-card countdown-card">
 
+<h3>🎂 Birthday Surprise</h3>
 
-<div class="card">
+<h1 id="countdown">
 
+00 : 00 : 00
 
-
-<!-- Step 1 -->
-
-<div class="step active">
-
-
-<h1>🌙 শুরু</h1>
-
+</h1>
 
 <p>
 
-আজ অনেক কিছু বলার আছে... জানি, তুমি হয়তো আজ আর আমার জীবনের অংশ নও।
+অপেক্ষা করো... ❤️
 
-তবুও আজকের দিনটা তোমার... তাই কিছু কথা বলতে চাই। 🌸
+<br>
+
+আজ রাত <strong>৮:২০</strong> টায় একটি বিশেষ বার্তা খুলবে।
 
 </p>
 
+</div>
 
-<button onclick="nextStep()">
-➡️ পরের পৃষ্ঠা
+</section>
+
+<!-- =========================
+STEP 1
+========================= -->
+
+<section id="step1" class="page">
+
+<div class="glass-card">
+
+<h2>
+
+🌙 আজ অনেক কিছু বলার আছে...
+
+</h2>
+
+<p class="story">
+
+জানি, তুমি হয়তো আজ আর আমার জীবনের অংশ নও।
+
+তবুও আজকের দিনটা শুধু তোমার।
+
+তাই কিছু কথা বলতে চাই... 🌸
+
+</p>
+
+<button class="nextBtn" onclick="nextStep(2)">
+
+পরের পৃষ্ঠা ➜
+
 </button>
-
 
 </div>
 
+</section>
+<!-- =========================
+STEP 2
+========================= -->
 
+<section id="step2" class="page">
 
+<div class="glass-card">
 
+<h2>
 
-<!-- Step 2 -->
+💭 কিছু স্মৃতি...
 
-<div class="step">
+</h2>
 
+<p class="story">
 
-<h1>💭 স্মৃতি</h1>
+এক সময় প্রতিদিন কথা হতো...
 
+হাসি ছিল...
 
-<p>
-
-এক সময় প্রতিদিন কথা হতো... হাসি ছিল... অভিমান ছিল...
+অভিমান ছিল...
 
 আজ সেগুলো শুধু স্মৃতি।
 
-কিন্তু স্মৃতিগুলো আজও মিথ্যা নয়। 💙
+তবুও সেই মুহূর্তগুলো আজও আমার কাছে অমূল্য। 💙
 
 </p>
 
+<button class="nextBtn" onclick="nextStep(3)">
 
-<button onclick="nextStep()">
-➡️ আরও পড়ো
+আরও পড়ো ➜
+
 </button>
-
 
 </div>
 
+</section>
 
+<!-- =========================
+STEP 3
+========================= -->
 
+<section id="step3" class="page">
 
+<div class="glass-card">
 
-<!-- Step 3 -->
+<h2>
 
-<div class="step">
+🌧️ কিছু সত্যি কথা...
 
+</h2>
 
-<h1>🌧️ সত্যি কথা</h1>
+<p class="story">
 
+তুমি চলে গেছো...
 
-<p>
+হয়তো সেটাই তোমার ভালো থাকার পথ ছিল।
 
-তুমি চলে গেছো... হয়তো সেটাই তোমার ভালো থাকার পথ ছিল।
+আমি তোমাকে কখনো আটকাইনি...
 
-আমি আটকাইনি... কারণ ভালোবাসা কখনো জোর করে ধরে রাখা যায় না। 🌙
+কারণ ভালোবাসা কখনো জোর করে ধরে রাখা যায় না। 🌙
 
 </p>
 
+<button class="nextBtn" onclick="nextStep(4)">
 
-<button onclick="nextStep()">
-➡️ শেষ কথা
+শেষ কথা ➜
+
 </button>
-
 
 </div>
 
+</section>
+<!-- =========================
+STEP 4
+========================= -->
 
+<section id="step4" class="page">
 
+<div class="glass-card">
 
+<h2>
 
-<!-- Step 4 -->
+🎂 শুভ জন্মদিন
 
-<div class="step">
+</h2>
 
+<p class="story">
 
-<h1>🎉 শুভ জন্মদিন</h1>
-
-
-<p>
-
-শুভ জন্মদিন! 🎂🎉
+শুভ জন্মদিন! 🎉🎂
 
 <br><br>
 
@@ -567,49 +190,53 @@ font-size:15px;
 
 <br><br>
 
-তুমি সবসময় ভালো থেকো।
+তুমি সবসময় ভালো থেকো।
 
 <br><br>
 
-তোমার মুখের হাসি যেন কখনো হারিয়ে না যায়।
+তোমার মুখের হাসি যেন কখনো হারিয়ে না যায়।
 
 <br><br>
 
-আমি তোমার জীবনে না থাকলেও, আমার দোয়া সবসময় থাকবে।
+আমি তোমার জীবনে না থাকলেও,
 
-<br><br>
+আমার দোয়া সবসময় থাকবে।
 
-ভালো থেকো... শুভ জন্মদিন। ❤️
+❤️
 
 </p>
 
+<button class="nextBtn" onclick="nextStep(5)">
 
-<button onclick="nextStep()">
-➡️ শেষ পৃষ্ঠা
+শেষ পৃষ্ঠা ➜
+
 </button>
-
 
 </div>
 
+</section>
 
+<!-- =========================
+STEP 5
+========================= -->
 
+<section id="step5" class="page">
 
+<div class="glass-card">
 
-<!-- Step 5 -->
+<h2>
 
-<div class="step">
+🌌 বিদায়...
 
+</h2>
 
-<h1>🌌 শেষ</h1>
+<p class="story">
 
-
-<p>
-
-কিছু মানুষ গল্প হয়ে যায়...
+কিছু মানুষ গল্প হয়ে যায়...
 
 <br><br>
 
-কিন্তু কিছু গল্প কখনো শেষ হয় না।
+কিন্তু কিছু গল্প কখনো শেষ হয় না।
 
 <br><br>
 
@@ -617,154 +244,40 @@ font-size:15px;
 
 <br><br>
 
-বিদায়... 🌙❤️
+শুভ জন্মদিন। ❤️🌙
 
 </p>
 
+<div class="music-control">
 
-<h3>
+<button id="musicBtn" onclick="toggleMusic()">
+
+🔇 Music OFF
+
+</button>
+
+</div>
+
+<p class="made">
+
 Made with ❤️
-</h3>
 
-
-</div>
-
-
+</p>
 
 </div>
 
-
+</section>
 </div>
 
+<!-- End Container -->
+</div>
 
+<!-- =========================
+SCRIPT
+========================= -->
 
-
-
-<script>
-
-
-// ==========================
-// STEP CHANGE
-// ==========================
-
-
-let currentStep = 0;
-
-
-const steps = document.querySelectorAll(".step");
-
-
-
-function nextStep(){
-
-
-    steps[currentStep].classList.remove("active");
-
-
-    currentStep++;
-
-
-    if(currentStep < steps.length){
-
-        steps[currentStep].classList.add("active");
-
-    }
-
-
-}
-
-
-
-
-
-
-// ==========================
-// MUSIC CONTROL
-// ==========================
-
-
-const music =
-document.getElementById("music");
-
-
-const musicBtn =
-document.getElementById("musicBtn");
-
-
-
-musicBtn.onclick = function(){
-
-
-    music.play();
-
-
-    musicBtn.innerHTML =
-    "🎵 Music চলছে ❤️";
-
-
-};
-
-
-
-
-
-
-
-// ==========================
-// TYPING EFFECT (STEP 1)
-// ==========================
-
-
-const firstParagraph =
-document.querySelector(".step.active p");
-
-
-
-let message =
-firstParagraph.innerHTML;
-
-
-
-firstParagraph.innerHTML="";
-
-
-
-let count = 0;
-
-
-
-function typingEffect(){
-
-
-    if(count < message.length){
-
-
-        firstParagraph.innerHTML += message.charAt(count);
-
-
-        count++;
-
-
-        setTimeout(typingEffect,45);
-
-
-    }
-
-
-}
-
-
-
-typingEffect();
-
-
-
-
-
-</script>
-
-
+<script src="script.js"></script>
 
 </body>
 
-</html>
+    </html>
