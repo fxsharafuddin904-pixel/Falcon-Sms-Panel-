@@ -230,3 +230,446 @@ h1{
     margin-top:12px;
 
 }
+/* ========================= */
+/* SMS Cost */
+/* ========================= */
+
+.smsPrice{
+
+    margin:28px 0;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+.smsPrice span{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#38bdf8;
+
+}
+
+/* ========================= */
+/* Feature Cards */
+/* ========================= */
+
+.featureRow{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin:30px 0;
+
+}
+
+.featureCard{
+
+    flex:1;
+
+    padding:18px 10px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.featureCard:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.35);
+
+}
+
+.featureCard .icon{
+
+    font-size:32px;
+
+    margin-bottom:10px;
+
+}
+
+.featureCard h2{
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+.featureCard p{
+
+    color:#d6d6d6;
+
+    font-size:14px;
+
+}
+
+/* ========================= */
+/* Input */
+/* ========================= */
+
+.inputGroup{
+
+    text-align:left;
+
+    margin-top:22px;
+
+}
+
+.inputGroup label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.inputGroup input,
+.inputGroup select{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    outline:none;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.inputGroup input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus{
+
+    border-color:#60a5fa;
+
+    box-shadow:0 0 18px rgba(59,130,246,.45);
+
+}
+
+/* Select Option */
+
+select option{
+
+    background:#111827;
+
+    color:#fff;
+
+}
+
+/* Error */
+
+.error{
+
+    display:block;
+
+    color:#ff6b6b;
+
+    font-size:13px;
+
+    margin-top:8px;
+
+    min-height:18px;
+
+    }
+/* ========================= */
+/* Buttons */
+/* ========================= */
+
+.mainBtn,
+.secondaryBtn,
+.dangerBtn{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:22px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.mainBtn{
+
+    color:#fff;
+
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #8b5cf6);
+
+}
+
+.mainBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.4);
+
+}
+
+.secondaryBtn{
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.secondaryBtn:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.dangerBtn{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+.dangerBtn:hover{
+
+    background:#b91c1c;
+
+    transform:scale(1.02);
+
+}
+
+/* ========================= */
+/* Login Badge */
+/* ========================= */
+
+.testAccount{
+
+    display:inline-block;
+
+    margin:20px 0;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:rgba(59,130,246,.2);
+
+    border:1px solid rgba(59,130,246,.4);
+
+    color:#93c5fd;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+/* ========================= */
+/* Final Page */
+/* ========================= */
+
+.musicIcon{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.pageTitle{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.musicStatus{
+
+    margin-top:25px;
+
+    color:#facc15;
+
+    font-weight:600;
+
+}
+
+/* ========================= */
+/* Error Animation */
+/* ========================= */
+
+.shake{
+
+    animation:shake .35s;
+}
+
+@keyframes shake{
+
+0%,100%{
+transform:translateX(0);
+}
+
+20%{
+transform:translateX(-6px);
+}
+
+40%{
+transform:translateX(6px);
+}
+
+60%{
+transform:translateX(-4px);
+}
+
+80%{
+transform:translateX(4px);
+}
+
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media(max-width:600px){
+
+.container{
+
+    max-width:100%;
+
+    padding:20px 14px;
+
+}
+
+.glass{
+
+    padding:28px 18px;
+
+}
+
+h1{
+
+    font-size:26px;
+
+}
+
+.pageTitle{
+
+    font-size:22px;
+
+}
+
+.featureRow{
+
+    gap:8px;
+
+}
+
+.featureCard{
+
+    padding:14px 6px;
+
+}
+
+.featureCard h2{
+
+    font-size:18px;
+
+}
+
+.featureCard p{
+
+    font-size:12px;
+
+}
+
+.logo{
+
+    width:75px;
+    height:75px;
+
+    font-size:34px;
+
+}
+
+.mainBtn,
+.secondaryBtn,
+.dangerBtn{
+
+    padding:14px;
+
+}
+
+}
+
+@media(min-width:601px) and (max-width:992px){
+
+.container{
+
+    max-width:600px;
+
+}
+
+    }
