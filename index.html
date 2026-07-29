@@ -1,325 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>FalconPanel</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-<div class="bg"></div>
+<!-- HOME PAGE -->
 
-<div class="container">
+<section id="home" class="page active">
 
-<!-- ========================= -->
-<!-- PAGE 1 -->
-<!-- ========================= -->
+<header>
 
-<section id="welcomePage" class="page active">
+<div class="logo-box">
 
-<div class="glass">
+<img src="falcon.png" class="logo">
 
-<!-- Top Header -->
-
-<div class="topBar">
-
-<div class="logo">
-
-🦅
+<h2>FalconPanel</h2>
 
 </div>
 
-<h2 class="logoTitle">
+</header>
 
-FalconPanel
+<div class="home-content">
 
-</h2>
+<h4># Welcome to</h4>
 
-</div>
+<h1>FalconPanel</h1>
 
-<h3 class="welcomeText">
-
-WELCOME
-
-</h3>
-
-<h1>
-
-Welcome to
-
-</h1>
-
-<h1 class="gradient">
-
-FalconPanel
-
-</h1>
-
-<p class="subtitle">
-
+<p>
 From here you can get virtual numbers from all countries.
-
 </p>
 
-<div class="smsPrice">
+<div class="stats">
 
-SMS Cost:
-
-<span>
-
-$0.013 / SMS
-
-</span>
-
+<div class="card">
+<h3>SMS Cost</h3>
+<span>$0.013 / SMS</span>
 </div>
 
-<div class="featureRow">
-
-<div class="featureCard">
-
-<div class="icon">🌍</div>
-
-<h2>190+</h2>
-
-<p>Countries</p>
-
+<div class="card">
+<h3>🌍 190+</h3>
+<span>Countries</span>
 </div>
 
-<div class="featureCard">
-
-<div class="icon">⚡</div>
-
-<h2>Fast</h2>
-
-<p>Delivery</p>
-
+<div class="card">
+<h3>⚡ Fast</h3>
+<span>Delivery</span>
 </div>
 
-<div class="featureCard">
-
-<div class="icon">🔒</div>
-
-<h2>Secure</h2>
-
-<p>Access</p>
-
+<div class="card">
+<h3>🔒 Secure</h3>
+<span>Access</span>
 </div>
 
 </div>
 
-<button id="startBtn" class="mainBtn">
-
-Get Started
-
+<button id="startBtn">
+Get Started →
 </button>
-
-<p class="footerText">
-
-Trusted Worldwide Virtual Number Provider
-
-</p>
 
 </div>
 
 </section>
+
+<!-- LOGIN PAGE (Part 2 এ যোগ হবে) -->
+
+<section id="login" class="page">
+
+</section>
+
+<!-- SERVICE PAGE (Part 3 এ যোগ হবে) -->
+
+<section id="service" class="page">
+
+</section>
+
+<!-- FINAL PAGE (Part 4 এ যোগ হবে) -->
+
+<section id="final" class="page">
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
 <!-- ========================= -->
-<!-- PAGE 2 -->
+<!-- LOGIN PAGE -->
 <!-- ========================= -->
 
-<section id="loginPage" class="page">
+<section id="login" class="page">
 
-<div class="glass">
+<header>
 
-<div class="topBar">
-
-<div class="logo">
-
-🦅
-
+<div class="logo-box">
+<img src="falcon.png" class="logo">
+<h2>FalconPanel</h2>
 </div>
 
-<h2 class="logoTitle">
+</header>
 
-FalconPanel
+<div class="login-box">
 
-</h2>
+<h1>Premium Virtual Number Service</h1>
 
-</div>
-
-<p class="brandSub">
-
-Premium Virtual Number Service
-
-</p>
-
-<div class="testAccount">
-
-TEST ACCOUNT
-
-</div>
-
-<h2 class="pageTitle">
-
-Login
-
-</h2>
-
-<p class="pageDescription">
-
+<p>
 Please log in first to access our virtual number service.
-
 </p>
 
-<div class="inputGroup">
-
-<label>
-
-Business Gmail
-
-</label>
+<label>Business Gmail</label>
 
 <input
 type="email"
 id="gmail"
-placeholder="falconpanel@gmail.com"
-autocomplete="off">
+placeholder="Enter your Business Gmail">
 
-<small id="gmailError" class="error"></small>
-
-</div>
-
-<div class="inputGroup">
-
-<label>
-
-Password
-
-</label>
+<label>Password</label>
 
 <input
-type="password"
+type="text"
 id="password"
-value="1234"
-readonly>
+placeholder="1234"
+onclick="autoPassword()">
 
-<small id="passwordError" class="error"></small>
-
-</div>
-
-<button id="loginBtn" class="mainBtn">
-
-Login
-
+<button id="loginBtn">
+Login ➡️
 </button>
 
-<button id="backWelcomeBtn" class="secondaryBtn">
-
-Back
-
+<button id="backHome">
+⬅️ Back
 </button>
 
 </div>
 
-    </section>
-    <!-- ========================= -->
-<!-- PAGE 3 -->
+</section>
+
+<!-- ========================= -->
+<!-- SERVICE PAGE -->
 <!-- ========================= -->
 
-<section id="servicePage" class="page">
+<section id="service" class="page">
 
-<div class="glass">
+<header>
 
-<div class="topBar">
+<div class="logo-box">
 
-<div class="logo">
+<img src="falcon.png" class="logo">
 
-🦅
-
-</div>
-
-<h2 class="logoTitle">
-
-FalconPanel
-
-</h2>
+<h2>FalconPanel</h2>
 
 </div>
 
-<h2 class="pageTitle">
+</header>
 
-SELECT SERVICE
+<div class="service-box">
 
-</h2>
+<h1>Premium Virtual Number Service</h1>
 
-<p class="pageDescription">
+<h2>SELECT SERVICE</h2>
 
+<p>
 Choose Platform & Country
-
 </p>
 
-<p class="subtitle">
-
+<p>
 Select your platform and country below.
-
 </p>
 
-<div class="inputGroup">
-
-<label>
-
-Platform
-
-</label>
+<label>Platform</label>
 
 <select id="platform">
 
-<option value="">Select Platform</option>
+<option value="">
+Select Platform
+</option>
 
-<option>WhatsApp</option>
+<option>
+Telegram
+</option>
 
-<option>Telegram</option>
+<option>
+WhatsApp
+</option>
 
-<option>Facebook</option>
+<option>
+TikTok
+</option>
 
-<option>Instagram</option>
-
-<option>Google</option>
-
-<option>TikTok</option>
+<option>
+IMO
+</option>
 
 </select>
 
-<small id="platformError" class="error"></small>
-
-</div>
-
-<div class="inputGroup">
-
-<label>
-
-Country
-
-</label>
+<label>Country</label>
 
 <select id="country">
 
-<option value="">Select Country</option>
+<option value="">
+Select Country
+</option>
 
-<option>United States</option>
+<option>Bangladesh</option>
+
+<option>India</option>
+
+<option>Pakistan</option>
+
+<option>USA</option>
 
 <option>United Kingdom</option>
 
@@ -329,119 +222,115 @@ Country
 
 <option>France</option>
 
+<option>Japan</option>
+
+<option>China</option>
+
+<option>Brazil</option>
+
+<option>Turkey</option>
+
+<option>Indonesia</option>
+
+<option>Malaysia</option>
+
+<option>Singapore</option>
+
 <option>Australia</option>
 
-<option>India</option>
+<option>Russia</option>
+
+<option>Saudi Arabia</option>
+
+<option>UAE</option>
+
+<option>Nepal</option>
 
 </select>
 
-<small id="countryError" class="error"></small>
-
-</div>
-
-<button id="getNumberBtn" class="mainBtn">
+<button id="getNumber">
 
 Get Number
 
 </button>
 
-<button id="backLoginBtn" class="secondaryBtn">
+<button id="backLogin">
 
-Back
+⬅️ Back
 
 </button>
 
 </div>
 
 </section>
+
 <!-- ========================= -->
-<!-- PAGE 4 -->
+<!-- FINAL PAGE (Part 4 এ হবে) -->
 <!-- ========================= -->
 
-<section id="finalPage" class="page">
+<section id="final" class="page">
 
-<div class="glass">
+</section>
+<!-- ========================= -->
+<!-- FINAL PAGE -->
+<!-- ========================= -->
 
-<div class="topBar">
+<section id="final" class="page">
 
-<div class="logo">
+<header>
 
-🦅
+<div class="logo-box">
+
+<img src="falcon.png" class="logo">
+
+<h2>FalconPanel</h2>
 
 </div>
 
-<h2 class="logoTitle">
+</header>
 
-FalconPanel
+<div class="final-box">
 
-</h2>
-
-</div>
-
-<div class="musicIcon">
-
+<div class="music-logo">
 🎵
-
 </div>
 
-<h2 class="pageTitle">
+<h1>EXPERIENCE COMPLETE</h1>
 
-EXPERIENCE COMPLETE
+<p>
+You wanted a free custom message and bombing,
+</p>
 
+<p>
+right?
+</p>
+
+<p>
+You like getting things for free, don't you?
+Now enjoy the real fun!
+</p>
+
+<h2>
+😅 Sad music is playing...
 </h2>
 
-<p class="finalText">
-
-You wanted a free All Country Number and Service, right? 💌
-
-</p>
-
-<p class="finalText">
-
-You like getting things for free, don't you? 🤣
-
-</p>
-
-<p class="finalText">
-
-Now enjoy the real fun! 🤣🤣💥
-
-</p>
-
-<p class="musicStatus">
-
-😅 Sad music is playing...
-
-</p>
-
-<button id="musicToggleBtn" class="dangerBtn">
-
-🔇 Music OFF
-
+<button id="musicToggle">
+🔇 OFF
 </button>
 
-</div>
+<button id="backService">
+⬅️ Back
+</button>
 
-</section>
-
-</div>
-
-<!-- ========================= -->
-<!-- AUDIO -->
-<!-- ========================= -->
-
-<audio id="sadMusic" loop autoplay>
-
-<source src="ssstik.io_1785264460697.mp3" type="audio/mpeg">
-
+<audio id="sadMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- ========================= -->
-<!-- JavaScript -->
-<!-- ========================= -->
+</div>
+
+</section>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
