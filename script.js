@@ -1,15 +1,21 @@
+// =========================
+// ELEMENTS
+// =========================
+
 const welcomePage = document.getElementById("welcomePage");
 const loginPage = document.getElementById("loginPage");
 const platformPage = document.getElementById("platformPage");
 const successPage = document.getElementById("successPage");
 
 const getStarted = document.getElementById("getStarted");
+const loginBtn = document.getElementById("loginBtn");
 const backWelcome = document.getElementById("backWelcome");
 const backLogin = document.getElementById("backLogin");
 const backHome = document.getElementById("backHome");
 
-const passwordInput = document.getElementById("password");
-const loginBtn = document.getElementById("loginBtn");
+const gmail = document.getElementById("gmail");
+const password = document.getElementById("password");
+
 const loginError = document.getElementById("loginError");
 
 const platform = document.getElementById("platform");
@@ -19,124 +25,123 @@ const formError = document.getElementById("formError");
 
 const music = document.getElementById("successMusic");
 
-function showPage(page){
+// =========================
+// ACCOUNT
+// =========================
 
-    document.querySelectorAll(".page").forEach(p=>{
-        p.classList.remove("active");
-    });
-
-    page.classList.add("active");
-}
-
-getStarted.onclick=function(){
-
-    showPage(loginPage);
-
-};
-
-backWelcome.onclick=function(){
-
-    showPage(welcomePage);
-
-};
-
-backLogin.onclick=function(){
-
-    showPage(loginPage);
-
-};
-
-backHome.onclick=function(){
-
-    if(music){
-        music.pause();
-        music.currentTime=0;
-    }
-
-    platform.selectedIndex=0;
-    country.selectedIndex=0;
-
-    formError.textContent="";
-    passwordInput.value="";
-
-    showPage(welcomePage);
-
-};
 const BUSINESS_GMAIL = "falconpanel@gmail.com";
 const PASSWORD = "1234";
 
-passwordInput.addEventListener("click", function () {
+// =========================
+// PAGE FUNCTION
+// =========================
 
-    if (this.value === "") {
-        this.value = PASSWORD;
-    }
+function showPage(page){
+
+    document.querySelectorAll(".page").forEach(function(item){
+
+        item.classList.remove("active");
+
+    });
+
+    page.classList.add("active");
+
+}
+
+// =========================
+// WELCOME PAGE
+// =========================
+
+getStarted.addEventListener("click",function(){
+
+    showPage(loginPage);
 
 });
 
+// =========================
+// BACK BUTTONS
+// =========================
+
+backWelcome.addEventListener("click",function(){
+
+    showPage(welcomePage);
+
+});
+
+backLogin.addEventListener("click",function(){
+
+    showPage(loginPage);
+
+});
+// =========================
+// LOGIN SYSTEM
+// =========================
+
 loginBtn.addEventListener("click", function () {
-
-    const gmail = document
-        .getElementById("gmail")
-        .value
-        .trim()
-        .toLowerCase();
-
-    const pass = passwordInput.value.trim();
 
     loginError.textContent = "";
 
-    if (gmail !== BUSINESS_GMAIL.toLowerCase()) {
+    const userGmail = gmail.value.trim().toLowerCase();
+    const userPassword = password.value.trim();
 
-        loginError.textContent =
-            "❌ Invalid Business Gmail.";
+    if (userGmail === "") {
 
-        document
-            .getElementById("gmail")
-            .classList.add("shake");
+        loginError.textContent = "Please enter your Business Gmail.";
+
+        gmail.classList.add("shake");
 
         setTimeout(() => {
-            document
-                .getElementById("gmail")
-                .classList.remove("shake");
+            gmail.classList.remove("shake");
         }, 400);
 
         return;
 
     }
 
-    if (pass !== PASSWORD) {
+    if (userGmail !== BUSINESS_GMAIL) {
 
-        loginError.textContent =
-            "❌ Wrong Password.";
+        loginError.textContent = "Invalid Business Gmail.";
 
-        passwordInput.classList.add("shake");
+        gmail.classList.add("shake");
 
         setTimeout(() => {
-            passwordInput.classList.remove("shake");
+            gmail.classList.remove("shake");
         }, 400);
 
         return;
 
     }
 
-    document
-        .getElementById("gmail")
-        .value = "";
+    if (userPassword !== PASSWORD) {
 
-    passwordInput.value = "";
+        loginError.textContent = "Invalid Password.";
+
+        password.classList.add("shake");
+
+        setTimeout(() => {
+            password.classList.remove("shake");
+        }, 400);
+
+        return;
+
+    }
 
     loginError.textContent = "";
 
     showPage(platformPage);
 
 });
+// =========================
+// GET NUMBER
+// =========================
+
 getNumber.addEventListener("click", function () {
 
     formError.textContent = "";
 
     if (platform.value === "") {
 
-        formError.textContent = "❌ Please select your platform.";
+        formError.textContent = "Please select your platform.";
 
         platform.classList.add("shake");
 
@@ -150,7 +155,7 @@ getNumber.addEventListener("click", function () {
 
     if (country.value === "") {
 
-        formError.textContent = "❌ Please select your country.";
+        formError.textContent = "Please select your country.";
 
         country.classList.add("shake");
 
@@ -163,8 +168,11 @@ getNumber.addEventListener("click", function () {
     }
 
     if (music) {
+
         music.currentTime = 0;
-        music.play();
+
+        music.play().catch(() => {});
+
     }
 
     alert("Number Send Successful");
@@ -172,30 +180,59 @@ getNumber.addEventListener("click", function () {
     showPage(successPage);
 
 });
-/* =========================
-SUCCESS PAGE
-========================= */
 
-window.addEventListener("load", () => {
+// Clear errors when changing selections
+
+platform.addEventListener("change", function () {
+
+    formError.textContent = "";
+
+});
+
+country.addEventListener("change", function () {
+
+    formError.textContent = "";
+
+});
+// =========================
+// BACK TO HOME
+// =========================
+
+backHome.addEventListener("click", function () {
+
+    if (music) {
+        music.pause();
+        music.currentTime = 0;
+    }
+
+    gmail.value = "";
+    password.value = "1234";
+
+    platform.selectedIndex = 0;
+    country.selectedIndex = 0;
+
+    loginError.textContent = "";
+    formError.textContent = "";
 
     showPage(welcomePage);
 
 });
 
-document.addEventListener("keydown", (e) => {
+// =========================
+// PAGE LOAD
+// =========================
 
-    if (e.key === "Escape") {
+window.addEventListener("load", function () {
 
-        if (music) {
-            music.pause();
-            music.currentTime = 0;
-        }
-
-    }
+    showPage(welcomePage);
 
 });
 
-window.addEventListener("beforeunload", () => {
+// =========================
+// STOP MUSIC ON EXIT
+// =========================
+
+window.addEventListener("beforeunload", function () {
 
     if (music) {
         music.pause();
@@ -203,17 +240,5 @@ window.addEventListener("beforeunload", () => {
     }
 
 });
-
-platform.addEventListener("change", () => {
-    formError.textContent = "";
-});
-
-country.addEventListener("change", () => {
-    formError.textContent = "";
-});
-
-/* =========================
-END
-========================= */
 
 console.log("FalconPanel Loaded Successfully");
