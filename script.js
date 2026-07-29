@@ -1,12 +1,12 @@
-// ==========================
+//====================================
 // FALCON PANEL
-// PART 1
-// ==========================
+// SCRIPT PART 1
+//====================================
 
-const home = document.getElementById("home");
-const login = document.getElementById("login");
-const service = document.getElementById("service");
-const finalPage = document.getElementById("final");
+const home=document.getElementById("home");
+const login=document.getElementById("login");
+const service=document.getElementById("service");
+const finalPage=document.getElementById("final");
 
 function showPage(page){
 
@@ -17,23 +17,27 @@ finalPage.classList.remove("active");
 
 page.classList.add("active");
 
+window.scrollTo(0,0);
+
 }
 
-// Home → Login
+// HOME → LOGIN
 
-document.getElementById("startBtn").onclick = function(){
+document.getElementById("startBtn").onclick=function(){
 
-this.style.transform="scale(.92)";
+this.style.transform="scale(.90)";
 
 setTimeout(()=>{
 
 showPage(login);
 
+this.style.transform="scale(1)";
+
 },300);
 
 };
 
-// Back Login → Home
+// LOGIN → HOME
 
 document.getElementById("backHome").onclick=function(){
 
@@ -41,7 +45,7 @@ showPage(home);
 
 };
 
-// Password Auto Fill
+// AUTO PASSWORD
 
 function autoPassword(){
 
@@ -49,19 +53,15 @@ document.getElementById("password").value="1234";
 
 }
 
-// Login
+// LOGIN CHECK
 
 document.getElementById("loginBtn").onclick=function(){
 
 let gmail=document.getElementById("gmail").value.trim();
 
-let pass=document.getElementById("password").value.trim();
+let password=document.getElementById("password").value.trim();
 
-if(
-gmail==="Falconpanel@gmail.com"
-&&
-pass==="1234"
-){
+if(gmail==="Falconpanel@gmail.com" && password==="1234"){
 
 showPage(service);
 
@@ -75,87 +75,106 @@ document.querySelector(".login-box").classList.remove("shake");
 
 },400);
 
-alert("Wrong Business Gmail or Password.");
+alert("Invalid Business Gmail or Password");
 
 }
 
 };
 
-// Back Service → Login
+// SERVICE → LOGIN
 
 document.getElementById("backLogin").onclick=function(){
 
 showPage(login);
 
 };
-// ==========================
+//====================================
 // FALCON PANEL
-// PART 2 (FINAL)
-// ==========================
+// SCRIPT PART 1
+//====================================
 
-const platform = document.getElementById("platform");
-const country = document.getElementById("country");
-const music = document.getElementById("sadMusic");
+const home=document.getElementById("home");
+const login=document.getElementById("login");
+const service=document.getElementById("service");
+const finalPage=document.getElementById("final");
 
-// Get Number
-document.getElementById("getNumber").onclick = function () {
+function showPage(page){
 
-    if (platform.value === "" || country.value === "") {
+home.classList.remove("active");
+login.classList.remove("active");
+service.classList.remove("active");
+finalPage.classList.remove("active");
 
-        document.querySelector(".service-box").classList.add("shake");
+page.classList.add("active");
 
-        setTimeout(() => {
-            document.querySelector(".service-box").classList.remove("shake");
-        }, 400);
+window.scrollTo(0,0);
 
-        alert("Please select Platform and Country.");
+}
 
-        return;
-    }
+// HOME → LOGIN
 
-    showPage(finalPage);
+document.getElementById("startBtn").onclick=function(){
 
-    // Try to play music
-    music.currentTime = 0;
-    music.play().catch(() => {});
-};
+this.style.transform="scale(.90)";
 
-// Back Final → Service
-document.getElementById("backService").onclick = function () {
-    music.pause();
-    music.currentTime = 0;
-    showPage(service);
-};
+setTimeout(()=>{
 
-// Music OFF Button
-const musicBtn = document.getElementById("musicToggle");
+showPage(login);
 
-musicBtn.onclick = function () {
+this.style.transform="scale(1)";
 
-    if (music.paused) {
-
-        music.play().catch(() => {});
-        musicBtn.innerHTML = "🔊 ON";
-
-    } else {
-
-        music.pause();
-        musicBtn.innerHTML = "🔇 OFF";
-
-    }
+},300);
 
 };
 
-// Press Enter to Login
-document.addEventListener("keydown", function (e) {
+// LOGIN → HOME
 
-    if (e.key === "Enter" && login.classList.contains("active")) {
+document.getElementById("backHome").onclick=function(){
 
-        document.getElementById("loginBtn").click();
-
-    }
-
-});
-
-// Default Home Page
 showPage(home);
+
+};
+
+// AUTO PASSWORD
+
+function autoPassword(){
+
+document.getElementById("password").value="1234";
+
+}
+
+// LOGIN CHECK
+
+document.getElementById("loginBtn").onclick=function(){
+
+let gmail=document.getElementById("gmail").value.trim();
+
+let password=document.getElementById("password").value.trim();
+
+if(gmail==="Falconpanel@gmail.com" && password==="1234"){
+
+showPage(service);
+
+}else{
+
+document.querySelector(".login-box").classList.add("shake");
+
+setTimeout(()=>{
+
+document.querySelector(".login-box").classList.remove("shake");
+
+},400);
+
+alert("Invalid Business Gmail or Password");
+
+}
+
+};
+
+// SERVICE → LOGIN
+
+document.getElementById("backLogin").onclick=function(){
+
+showPage(login);
+
+};
