@@ -1,23 +1,28 @@
-/*==========================
-FALCON PANEL
-PREMIUM CSS
-===========================*/
+/*====================================
+FALCON PANEL - PREMIUM CSS
+PART 1
+====================================*/
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:#050816;
+background:#060b1c;
+background-image:
+radial-gradient(circle at top,#00c3ff33,transparent 40%),
+radial-gradient(circle at bottom,#00ff8833,transparent 40%);
 color:#fff;
 overflow:hidden;
 }
 
 .page{
 position:absolute;
+top:0;
+left:0;
 width:100%;
 height:100vh;
 display:none;
@@ -25,8 +30,7 @@ justify-content:center;
 align-items:center;
 flex-direction:column;
 padding:20px;
-background:linear-gradient(135deg,#050816,#111b38,#071127);
-animation:fade .5s ease;
+animation:fade .45s ease;
 }
 
 .page.active{
@@ -49,8 +53,8 @@ transform:scale(1);
 
 header{
 position:absolute;
-top:15px;
-left:20px;
+top:18px;
+left:18px;
 }
 
 .logo-box{
@@ -60,21 +64,29 @@ gap:12px;
 }
 
 .logo{
-width:50px;
-height:50px;
+
+width:55px;
+height:55px;
 border-radius:50%;
-background:#fff;
-object-fit:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+
+background:linear-gradient(135deg,#00d4ff,#00ff99);
+
+box-shadow:0 0 25px #00d4ff;
+
 }
 
 .logo-box h2{
 
-font-size:28px;
+font-size:30px;
+font-weight:bold;
 
-background:linear-gradient(90deg,#00e5ff,#00ff99);
+background:linear-gradient(90deg,#00d4ff,#00ff99);
 
 -webkit-background-clip:text;
-
 -webkit-text-fill-color:transparent;
 
 }
@@ -85,208 +97,316 @@ background:linear-gradient(90deg,#00e5ff,#00ff99);
 .final-box{
 
 width:100%;
-max-width:430px;
+max-width:420px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:25px;
+
+padding:28px;
+
+box-shadow:0 0 30px rgba(0,255,255,.15);
+
 text-align:center;
 
 }
 
 .home-content h4{
 
-color:#8ecfff;
+color:#8fdfff;
 margin-bottom:10px;
 
 }
 
 .home-content h1{
 
-font-size:45px;
-margin-bottom:12px;
+font-size:42px;
+margin-bottom:15px;
 
 }
 
 .home-content p{
 
-color:#d4d4d4;
+color:#ddd;
 line-height:1.7;
 
 }
-/*==========================
-STATS CARD
-==========================*/
+/*====================================
+FALCON PANEL - PREMIUM CSS
+PART 2
+====================================*/
+
+/* STATS */
 
 .stats{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:15px;
-margin:30px 0;
+margin:25px 0;
 }
 
 .card{
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-backdrop-filter:blur(15px);
-border-radius:18px;
 padding:18px;
+border-radius:18px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
 transition:.35s;
-box-shadow:0 0 20px rgba(0,255,255,.15);
 }
 
 .card:hover{
 transform:translateY(-6px);
-box-shadow:0 0 25px #00e5ff;
+box-shadow:0 0 20px #00d4ff;
 }
 
 .card h3{
-font-size:20px;
+font-size:19px;
 margin-bottom:8px;
 }
 
 .card span{
+color:#ddd;
 font-size:15px;
-color:#d8d8d8;
 }
 
-/*==========================
-INPUTS
-==========================*/
+/* INPUT */
 
 input,
 select{
+
 width:100%;
 padding:15px;
+
 margin:12px 0;
+
 border:none;
 outline:none;
-border-radius:12px;
+
+border-radius:14px;
+
 background:rgba(255,255,255,.08);
-color:#fff;
+
+color:white;
+
 font-size:16px;
-border:1px solid rgba(255,255,255,.15);
+
+border:1px solid rgba(255,255,255,.12);
+
 }
 
 input::placeholder{
-color:#bdbdbd;
+color:#bbb;
 }
 
 select option{
-background:#101827;
+background:#111827;
 color:white;
 }
 
-/*==========================
-BUTTONS
-==========================*/
+/* BUTTON */
 
 button{
+
 width:100%;
+
 padding:15px;
+
 margin-top:15px;
+
 border:none;
+
 border-radius:14px;
+
 font-size:17px;
+
 font-weight:bold;
+
 cursor:pointer;
+
 transition:.3s;
-background:linear-gradient(90deg,#00d4ff,#00ff88);
+
+background:linear-gradient(90deg,#00d4ff,#00ff99);
+
 color:#000;
+
 }
 
 button:hover{
+
 transform:scale(1.03);
-box-shadow:0 0 20px #00ffcc;
+
+box-shadow:0 0 25px #00ffcc;
+
 }
 
 #backHome,
 #backLogin,
 #backService{
-background:#30384d;
+
+background:#283046;
+
 color:#fff;
-}
 
-#backHome:hover,
-#backLogin:hover,
-#backService:hover{
-box-shadow:0 0 15px #6f7dff;
 }
+/*====================================
+FALCON PANEL - PREMIUM CSS
+PART 3
+====================================*/
 
-/*==========================
-FINAL PAGE
-==========================*/
+/* FINAL PAGE */
 
 .music-logo{
+
 font-size:90px;
+
 margin-bottom:20px;
+
 animation:bounce 1.8s infinite;
+
 }
 
 .final-box h1{
-font-size:34px;
+
+font-size:32px;
+
 margin-bottom:18px;
+
 }
 
 .final-box p{
+
+line-height:1.7;
+
 margin:10px 0;
-line-height:1.6;
+
 color:#ddd;
+
 }
 
 .final-box h2{
+
 margin:25px 0;
+
 color:#ffd54f;
-}
-
-/*==========================
-ANIMATIONS
-==========================*/
-
-@keyframes bounce{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
 
 }
+
+/* SHAKE */
 
 .shake{
+
 animation:shake .35s;
+
 }
 
 @keyframes shake{
 
 0%{transform:translateX(0);}
-25%{transform:translateX(-8px);}
-50%{transform:translateX(8px);}
-75%{transform:translateX(-8px);}
+20%{transform:translateX(-8px);}
+40%{transform:translateX(8px);}
+60%{transform:translateX(-8px);}
+80%{transform:translateX(8px);}
 100%{transform:translateX(0);}
 
 }
 
-/*==========================
-RESPONSIVE
-==========================*/
+/* BOUNCE */
+
+@keyframes bounce{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* MOBILE */
 
 @media(max-width:600px){
 
-.home-content h1{
-font-size:36px;
+.home-content,
+.login-box,
+.service-box,
+.final-box{
+
+max-width:100%;
+
+padding:22px;
+
 }
 
 .logo{
-width:42px;
-height:42px;
+
+width:50px;
+height:50px;
+font-size:26px;
+
 }
 
 .logo-box h2{
+
 font-size:24px;
+
+}
+
+.home-content h1{
+
+font-size:34px;
+
 }
 
 .stats{
+
 grid-template-columns:1fr 1fr;
-gap:12px;
+
+gap:10px;
+
 }
 
 .card{
-padding:15px;
+
+padding:14px;
+
 }
 
-    }
+button{
+
+padding:14px;
+
+font-size:16px;
+
+}
+
+input,
+select{
+
+padding:14px;
+
+font-size:15px;
+
+}
+
+.music-logo{
+
+font-size:80px;
+
+}
+
+.final-box h1{
+
+font-size:28px;
+
+}
+
+}
