@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -21,6 +22,10 @@
 <div class="bg-glow glow-one"></div>
 <div class="bg-glow glow-two"></div>
 <div class="bg-glow glow-three"></div>
+
+<div class="fake-tag">
+FAKE WEBSITE
+</div>
 
 <!-- =========================
 WELCOME PAGE
@@ -53,24 +58,25 @@ Premium Virtual Number Service
 <div class="welcome-content">
 
 <div class="welcome-badge">
+
 PREMIUM ACCESS
+
 </div>
 
 <h1>
 
-Virtual Numbers
+Virtual Number
 
-<span>For Every Country</span>
+<span>Worldwide Access</span>
 
 </h1>
 
 <p class="welcome-description">
 
-Get virtual numbers from almost every country.
+Get access to virtual numbers from almost every country.
 
-Receive SMS instantly with premium quality.
-
-Starting price only <strong>$0.013 / SMS</strong>.
+Premium SMS service starting from only
+<b>$0.013 / SMS</b>.
 
 Fast • Secure • Reliable
 
@@ -94,7 +100,7 @@ Fast • Secure • Reliable
 
 <strong>Fast</strong>
 
-<small>Instant Access</small>
+<small>Instant</small>
 
 </div>
 
@@ -104,7 +110,7 @@ Fast • Secure • Reliable
 
 <strong>Secure</strong>
 
-<small>Private Service</small>
+<small>Private</small>
 
 </div>
 
@@ -125,12 +131,6 @@ Trusted Premium Virtual Number Platform
 </p>
 
 </div>
-
-</div>
-
-<div class="fake-tag">
-
-Fake Website
 
 </div>
 
@@ -172,40 +172,45 @@ TEST ACCOUNT
 </div>
 
 <h2>
-Login to Continue
+Login Required
 </h2>
 
 <p>
-Please sign in using the official FalconPanel test account to access our premium virtual number services.
+
+Please sign in with the authorized business account to continue accessing our premium virtual number service.
+
 </p>
 
 </div>
 
 <div class="form-group">
 
-<label>Email Address</label>
+<label>
+Business Gmail
+</label>
 
 <input
 type="email"
-id="email"
-value="FalconPanel@gmail.com"
-readonly>
+id="gmail"
+placeholder="Enter Business Gmail">
 
 </div>
 
 <div class="form-group">
 
-<label>Password</label>
+<label>
+Password
+</label>
 
 <input
-type="password"
+type="text"
 id="password"
-placeholder="Click here to fill password"
+value="1234"
 readonly>
 
 </div>
 
-<div class="error" id="loginError"></div>
+<div id="loginError" class="error"></div>
 
 <button
 class="primary-btn"
@@ -227,7 +232,91 @@ id="backWelcome">
 
 </section>
 
+<!-- PLATFORM PAGE START -->
+  <!-- =========================
+LOGIN PAGE
+========================= -->
+
+<section class="page" id="loginPage">
+
+    <div class="app-card">
+
+        <div class="top-brand">
+
+            <div class="brand-icon">🌍</div>
+
+            <div>
+                <div class="brand-name">FalconPanel</div>
+                <div class="brand-subtitle">
+                    Premium Virtual Number Service
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section-heading">
+
+            <div class="mini-label">
+                TEST ACCOUNT
+            </div>
+
+            <h2>Login Required</h2>
+
+            <p>
+                Please sign in with the authorized business account to continue.
+            </p>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Business Gmail</label>
+
+            <input
+                type="email"
+                id="gmail"
+                placeholder="Enter Business Gmail">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Password</label>
+
+            <input
+                type="text"
+                id="password"
+                value="1234"
+                readonly>
+
+        </div>
+
+        <div class="error" id="loginError"></div>
+
+        <button
+            class="primary-btn"
+            id="loginBtn">
+
+            Login →
+
+        </button>
+
+        <button
+            class="back-btn"
+            id="backWelcome">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
 <!-- =========================
+PLATFORM PAGE START
+========================= -->
+  <!-- =========================
 PLATFORM PAGE
 ========================= -->
 
@@ -237,15 +326,11 @@ PLATFORM PAGE
 
 <div class="top-brand">
 
-<div class="brand-icon">
-🌍
-</div>
+<div class="brand-icon">🌍</div>
 
 <div>
 
-<div class="brand-name">
-FalconPanel
-</div>
+<div class="brand-name">FalconPanel</div>
 
 <div class="brand-subtitle">
 Premium Virtual Number Service
@@ -258,49 +343,48 @@ Premium Virtual Number Service
 <div class="section-heading">
 
 <div class="mini-label">
-SELECT PLATFORM
+SELECT SERVICE
 </div>
 
 <h2>
-Choose Your Platform
+Choose Platform & Country
 </h2>
 
 <p>
-Select your preferred platform and country before requesting a virtual number.
+Select your preferred platform and the country you want to use before continuing.
 </p>
 
 </div>
 
 <div class="form-group">
 
-<label>Select your platform</label>
+<label>Select Your Platform</label>
 
 <select id="platform">
 
-<option value="">Choose Platform</option>
+<option value="">-- Select Platform --</option>
 
-<option>Telegram</option>
+<option value="Telegram">Telegram</option>
 
-<option>WhatsApp</option>
+<option value="WhatsApp">WhatsApp</option>
 
-<option>TikTok</option>
+<option value="TikTok">TikTok</option>
 
-<option>IMO</option>
+<option value="IMO">IMO</option>
 
 </select>
 
-  </div>
-  <div class="form-group">
+</div>
+
+<div class="form-group">
 
 <label>Select Country</label>
 
 <select id="country">
 
-<option value="">Choose Country</option>
+<option value="">-- Select Country --</option>
 
 <option>Bangladesh</option>
-<option>India</option>
-<option>Pakistan</option>
 <option>Syria</option>
 <option>Lebanon</option>
 <option>Morocco</option>
@@ -311,13 +395,13 @@ Select your preferred platform and country before requesting a virtual number.
 
 </div>
 
-<div id="formError" class="error"></div>
+<div class="error" id="formError"></div>
 
 <button
 class="primary-btn"
 id="getNumber">
 
-Get Number
+Get Number →
 
 </button>
 
@@ -333,74 +417,61 @@ id="backLogin">
 
 </section>
 
-<!-- =========================
+<!-- SUCCESS PAGE START -->
+  <!-- =========================
 SUCCESS PAGE
 ========================= -->
 
-<section
-class="page"
-id="successPage">
+<section class="page" id="successPage">
 
-<div class="music-card">
+    <div class="music-card">
 
-<div class="music-orb">
+        <div class="music-orb">
+            🌍
+        </div>
 
-🌍
+        <h2>Request Submitted</h2>
 
-</div>
+        <p>
+            Demo Mode<br>
+            This website is for UI demonstration only.
+        </p>
 
-<h2>
+        <div class="music-status">
 
-Number Send Successful
+            <div class="equalizer">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
 
-</h2>
+            <span>Processing...</span>
 
-<p>
+        </div>
 
-Your request has been processed successfully.
+        <button
+            class="music-btn"
+            id="backHome">
 
-Thank you for using FalconPanel.
+            Back To Home
 
-</p>
+        </button>
 
-<div class="music-status">
-
-<div class="equalizer">
-
-<i></i>
-<i></i>
-<i></i>
-<i></i>
-<i></i>
-
-</div>
-
-<span>
-
-Processing Request...
-
-</span>
-
-</div>
-
-<button
-class="music-btn"
-id="backHome">
-
-Back To Home
-
-</button>
-
-</div>
+    </div>
 
 </section>
 
-<audio
-id="successMusic"
-src="music.mp3">
+<!-- Audio -->
+
+<audio id="successMusic">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
+
+<!-- Script -->
 
 <script src="script.js"></script>
 
 </body>
-  </html>
+</html>
